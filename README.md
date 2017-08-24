@@ -8,7 +8,7 @@ This repo contains notes and runnable examples of the lambda calculus as express
 
 See the [`docs/`](/docs) directory for a formatted version of the code.
 
-The runnable JS file (with no dependencies – execute it wherever) is in [`src/lambda.js`](src/lambda.js). One way to execute the file is by cloning this repo and running `npm start`. Another way is to view the REPL [here]().
+The runnable JS file (with no dependencies – execute it wherever) is in [`src/index.js`](src/index.js). One way to execute the file is by cloning this repo and running `npm start`. Another way is to view the REPL [here]().
 
 Slides will be uploaded to Slideshare… just as soon as LinkedIn stops trying to erroneously block the upload.
 

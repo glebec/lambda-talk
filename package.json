@@ -5,12 +5,12 @@
 	"engines": {
 		"node": ">=8.0.0"
 	},
-	"main": "src/lambda.js",
+	"main": "src/index.js",
 	"scripts": {
-		"start": "node src/lambda.js",
-		"test": "node src/lambda.js",
-		"build": "docco src/lambda.js",
-		"prepush": "npm run build",
+		"start": "node src",
+		"test": "node src",
+		"build": "docco src/index.js",
+		"precommit": "./bin/build",
 		"lint": "esw --ext .js,.jsx --ignore-path .gitignore --cache --format node_modules/eslint-formatter-pretty",
 		"lint-watch": "npm run lint -- --watch",
 		"dev": "nodemon src/lambda.js"
