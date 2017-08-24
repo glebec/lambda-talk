@@ -1,0 +1,36 @@
+{
+	"name": "_REPLACE_SPRINGBOARD_NAME_",
+	"version": "1.0.0",
+	"description": "",
+	"engines": {
+		"node": ">=8.0.0"
+	},
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepush": "echo \"Please configure the prepush script\"",
+		"lint": "esw --ext .js,.jsx --ignore-path .gitignore --cache --format node_modules/eslint-formatter-pretty",
+		"lint-watch": "npm run lint -- --watch",
+		"dev": "cross-env NODE_ENV=development echo \"Please add a dev script\""
+	},
+	"author": "Gabriel Lebec <glebec@gmail.com> (https://github.com/glebec)",
+	"license": "MIT",
+	"homepage": "https://github.com/glebec/springboard#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/glebec/springboard"
+	},
+	"bugs": "https://github.com/glebec/springboard/issues",
+	"dependencies": {},
+	"devDependencies": {
+		"babel-eslint": "^7.2.3",
+		"cross-env": "^5.0.1",
+		"eslint": "^3.19.0",
+		"eslint-config-fullstack": "^3.0.0",
+		"eslint-formatter-pretty": "^1.1.0",
+		"eslint-plugin-react": "^7.0.1",
+		"eslint-watch": "^3.1.0",
+		"husky": "^0.13.4",
+		"nodemon": "^1.11.0"
+	}
+}
