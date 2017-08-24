@@ -23,7 +23,9 @@
 		"url": "https://github.com/glebec/lambda-talk"
 	},
 	"bugs": "https://github.com/glebec/lambda-talk/issues",
-	"dependencies": {},
+	"dependencies": {
+		"chalk": "^2.1.0"
+	},
 	"devDependencies": {
 		"babel-eslint": "^7.2.3",
 		"docco": "^0.7.0",
