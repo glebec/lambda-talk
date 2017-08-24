@@ -4,3 +4,8 @@ parser: babel-eslint
 extends: fullstack
 rules:
     semi: [1, never]
+    new-cap: 0
+    no-unused-vars: 0
+    id-length: 0
+    func-call-spacing: 0
+    no-spaced-func: 0

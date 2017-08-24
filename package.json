@@ -1,30 +1,32 @@
 {
-	"name": "_REPLACE_SPRINGBOARD_NAME_",
+	"name": "g-lebec-lambda-talk",
 	"version": "1.0.0",
-	"description": "",
+	"description": "A demonstration of the lambda calculus in JavaScript",
 	"engines": {
 		"node": ">=8.0.0"
 	},
-	"main": "index.js",
+	"main": "src/lambda.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"prepush": "echo \"Please configure the prepush script\"",
+		"start": "node src/lambda.js",
+		"test": "node src/lambda.js",
+		"build": "docco src/lambda.js",
+		"prepush": "npm run build",
 		"lint": "esw --ext .js,.jsx --ignore-path .gitignore --cache --format node_modules/eslint-formatter-pretty",
 		"lint-watch": "npm run lint -- --watch",
-		"dev": "cross-env NODE_ENV=development echo \"Please add a dev script\""
+		"dev": "nodemon src/lambda.js"
 	},
 	"author": "Gabriel Lebec <glebec@gmail.com> (https://github.com/glebec)",
 	"license": "MIT",
-	"homepage": "https://github.com/glebec/springboard#readme",
+	"homepage": "https://github.com/glebec/lambda-talk#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/glebec/springboard"
+		"url": "https://github.com/glebec/lambda-talk"
 	},
-	"bugs": "https://github.com/glebec/springboard/issues",
+	"bugs": "https://github.com/glebec/lambda-talk/issues",
 	"dependencies": {},
 	"devDependencies": {
 		"babel-eslint": "^7.2.3",
-		"cross-env": "^5.0.1",
+		"docco": "^0.7.0",
 		"eslint": "^3.19.0",
 		"eslint-config-fullstack": "^3.0.0",
 		"eslint-formatter-pretty": "^1.1.0",
