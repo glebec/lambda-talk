@@ -10,7 +10,19 @@ Visit [https://glebec.github.io/lambda-talk](https://glebec.github.io/lambda-tal
 
 The runnable JS file is in [`src/index.js`](src/index.js). Execute the file is by cloning this repo and running `npm start`. Or, view the REPL [here](https://repl.it/Jgu4/235).
 
-Slides will be uploaded to Slideshare… just as soon as LinkedIn stops trying to erroneously block the upload. Video will be linked once on YouTube.
+Slides will be uploaded to Slideshare… just as soon as LinkedIn stops trying to erroneously block the upload.
+
+## Videos
+
+This repo was created as an accompaniment to a lecture talk given at Fullstack Academy of Code on 2017-08-24. You can view that talk (in two parts) below:
+
+### Part I
+
+[![Lambda as JS, or A Flock of Functions: Part I](https://img.youtube.com/vi/3VQ382QG-y/0.jpg)](https://www.youtube.com/watch?v=3VQ382QG-y4&index=1&list=PLpkHU923F2XFWv-XfVuvWuxq41h21nOPK)
+
+### Part II
+
+[![Lambda as JS, or A Flock of Functions: Part I](https://img.youtube.com/vi/pAnLQ9jwN-E/0.jpg)](https://www.youtube.com/watch?v=pAnLQ9jwN-E&list=PLpkHU923F2XFWv-XfVuvWuxq41h21nOPK&index=2)
 
 ## Additional Resources
 
