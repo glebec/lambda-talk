@@ -18,7 +18,7 @@ This repo was created as an accompaniment to a lecture talk given at Fullstack A
 
 ### Part I
 
-[![Lambda as JS, or A Flock of Functions: Part I](https://img.youtube.com/vi/3VQ382QG-y/0.jpg)](https://www.youtube.com/watch?v=3VQ382QG-y4&index=1&list=PLpkHU923F2XFWv-XfVuvWuxq41h21nOPK)
+[![Lambda as JS, or A Flock of Functions: Part I](https://img.youtube.com/vi/3VQ382QG-y4/0.jpg)](https://www.youtube.com/watch?v=3VQ382QG-y4&list=PLpkHU923F2XFWv-XfVuvWuxq41h21nOPK&index=1)
 
 ### Part II
 
