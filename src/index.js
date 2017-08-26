@@ -2,11 +2,18 @@ const chalk = require('chalk')
 const green = chalk.green.bind(chalk)
 const red = chalk.red.bind(chalk)
 
+const errs = []
+
 function demo (msg, bool) {
 	if (typeof bool === 'function') bool = bool(true)(false)
 	if (!!bool !== bool) throw TypeError('second arg must be boolean (JS or LC)')
-  console.log(`${bool ? green('✔') : red('✖')} ${msg}`)
-  if (!bool) throw Error(`Spec fail: ${msg} -> ${bool}`)
+	console.log(`${bool ? green('✔') : red('✖')} ${msg}`)
+	if (!bool) errs.push(Error(red(`Spec fail: ${msg} -> ${bool}`)))
+}
+
+function logErrsAndSetExitCode () {
+	errs.forEach(err => console.error(err))
+	if (errs.length) process.exitCode = 1
 }
 
 function header (str) {
@@ -588,3 +595,5 @@ demo('fib 3 = 2', jsnum( fib(n3) ) === 2)
 demo('fib 4 = 3', jsnum( fib(n4) ) === 3)
 demo('fib 5 = 5', jsnum( fib(n5) ) === 5)
 demo('fib 6 = 8', jsnum( fib(n6) ) === 8)
+
+logErrsAndSetExitCode()

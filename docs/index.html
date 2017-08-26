@@ -34,11 +34,18 @@
 <span class="hljs-keyword">const</span> green = chalk.green.bind(chalk)
 <span class="hljs-keyword">const</span> red = chalk.red.bind(chalk)
 
+<span class="hljs-keyword">const</span> errs = []
+
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">demo</span> (<span class="hljs-params">msg, bool</span>) </span>{
 	<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> bool === <span class="hljs-string">'function'</span>) bool = bool(<span class="hljs-literal">true</span>)(<span class="hljs-literal">false</span>)
 	<span class="hljs-keyword">if</span> (!!bool !== bool) <span class="hljs-keyword">throw</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">'second arg must be boolean (JS or LC)'</span>)
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${bool ? green(<span class="hljs-string">'✔'</span>) : red(<span class="hljs-string">'✖'</span>)}</span> <span class="hljs-subst">${msg}</span>`</span>)
-  <span class="hljs-keyword">if</span> (!bool) <span class="hljs-keyword">throw</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Spec fail: <span class="hljs-subst">${msg}</span> -&gt; <span class="hljs-subst">${bool}</span>`</span>)
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${bool ? green(<span class="hljs-string">'✔'</span>) : red(<span class="hljs-string">'✖'</span>)}</span> <span class="hljs-subst">${msg}</span>`</span>)
+	<span class="hljs-keyword">if</span> (!bool) errs.push(<span class="hljs-built_in">Error</span>(red(<span class="hljs-string">`Spec fail: <span class="hljs-subst">${msg}</span> -&gt; <span class="hljs-subst">${bool}</span>`</span>)))
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logErrsAndSetExitCode</span> (<span class="hljs-params"></span>) </span>{
+	errs.forEach(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(err))
+	<span class="hljs-keyword">if</span> (errs.length) process.exitCode = <span class="hljs-number">1</span>
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">header</span> (<span class="hljs-params">str</span>) </span>{
@@ -1625,7 +1632,9 @@ demo(<span class="hljs-string">'fib 2 = 1'</span>, jsnum( fib(n2) ) === <span cl
 demo(<span class="hljs-string">'fib 3 = 2'</span>, jsnum( fib(n3) ) === <span class="hljs-number">2</span>)
 demo(<span class="hljs-string">'fib 4 = 3'</span>, jsnum( fib(n4) ) === <span class="hljs-number">3</span>)
 demo(<span class="hljs-string">'fib 5 = 5'</span>, jsnum( fib(n5) ) === <span class="hljs-number">5</span>)
-demo(<span class="hljs-string">'fib 6 = 8'</span>, jsnum( fib(n6) ) === <span class="hljs-number">8</span>)</pre></div></div>
+demo(<span class="hljs-string">'fib 6 = 8'</span>, jsnum( fib(n6) ) === <span class="hljs-number">8</span>)
+
+logErrsAndSetExitCode()</pre></div></div>
             
         </li>
         
