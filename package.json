@@ -13,7 +13,7 @@
 		"precommit": "./bin/build",
 		"lint": "esw --ext .js,.jsx --ignore-path .gitignore --cache --format node_modules/eslint-formatter-pretty",
 		"lint-watch": "npm run lint -- --watch",
-		"dev": "nodemon src/lambda.js"
+		"dev": "nodemon src"
 	},
 	"author": "Gabriel Lebec <glebec@gmail.com> (https://github.com/glebec)",
 	"license": "MIT",
