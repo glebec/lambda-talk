@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>index.js</title>
+  <title>Lambda as JS, or A Flock of Functions</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -13,12 +13,6 @@
     
     <ul class="sections">
         
-          <li id="title">
-              <div class="annotation">
-                  <h1>index.js</h1>
-              </div>
-          </li>
-        
         
         
         <li id="section-1">
@@ -27,10 +21,38 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <h1 id="lambda-as-js-or-a-flock-of-functions">Lambda as JS, or A Flock of Functions</h1>
+
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> chalk = <span class="hljs-built_in">require</span>(<span class="hljs-string">'chalk'</span>)
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <h3 id="combinators-lambda-calculus-and-church-encodings-in-javascript">Combinators, Lambda Calculus, and Church Encodings in JavaScript</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <h4 id="notes-for-a-talk-by-gabriel-lebec">Notes for a talk by Gabriel Lebec</h4>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">const</span> chalk = <span class="hljs-built_in">require</span>(<span class="hljs-string">'chalk'</span>)
 <span class="hljs-keyword">const</span> green = chalk.green.bind(chalk)
 <span class="hljs-keyword">const</span> red = chalk.red.bind(chalk)
 
@@ -50,91 +72,7 @@
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">header</span> (<span class="hljs-params">str</span>) </span>{
 	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'\n'</span> + str + <span class="hljs-string">'\n'</span>)
-}
-
-<span class="hljs-comment">/**
- * Everything as Functions: Lambda Calculus in JS
- * Notes for a talk by Gabriel Lebec
- *
- * The Lambda Calculus is a symbol manipulation framework developed
- * by mathematician Alonzo Church in the 1930s. It was intended to be
- * an extremely tiny syntax which could nevertheless suffice to
- * calculate anything computable. The mathematical advantage of such
- * a syntax is that with such extreme simplicity, it becomes easier
- * to write formal proofs about computational logic.
- *
- * Church had a very famous student, Alan Turing, who formulated a
- * different model of universal computation – the eponymous Turing
- * Machine. A TM is a hypothetical device, again of extreme simplicity;
- * it can read or write to cells in an infinite tape, and the cells
- * can contain data or instructions.
- *
- * Turing proved, in what is called the Church-Turing thesis, that the
- * Turing Machine and Lambda Calculus are totally equivalent. Everything
- * that one can calculate, the other can.
- *
- * Turing Machines are exciting because if a hypothetical machine can
- * compute anything computable, then maybe a real machine can as well.
- * Modern computers add many features and optimizations beyond what is
- * featured in an actual Turing Machine; these features make the machine
- * more convenient and performant, but do not compromise its essential
- * nature as a universal computing device.
- *
- * As machine codes, assemblers, compilers, and higher-level languages
- * have developed to program these real machines, they have largely
- * evolved with a focus on the essence of the machine – memory,
- * statefulness, effects, imperative instructions and so forth.
- *
- * However, mathematicians and computer scientists knew that the
- * entirely abstract lambda calculus, being equivalent to a TM,
- * meant that languages could be written in a style independent
- * from the concept of machine instructions. Instead, a language
- * consisting primarily of first-class functions – aka lambda
- * abstractions – could be compiled into machine code. Such a language,
- * meanwhile, would benefit greatly from decades of mathematical
- * research. And as real computers extend Turing Machines with extra
- * power and convenience, these _functional languages_ would extend
- * the lambda calculus with additional features and under-the-hood
- * shortcuts (such as hardware-based math).
- *
- * What follows is a demonstration, mostly for enjoyment and insight,
- * of the surprising and delightful omnipotence of the lambda calculus.
- * JavaScript, like any functional language, is closely related to LC; it
- * contains the necessary ingredients (variables, parens, first-class
- * functions) as well as additional luxuries.
- */</span>
-
-header(<span class="hljs-string">'First steps with simple combinators'</span>)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-2">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-2">&#182;</a>
-              </div>
-              <p>Starting simple. A lambda abstraction is simply an anonymous unary function. In LC there are no named functions, but for convenience we will use names. In mathematical notation, <code>:=</code> means “is defined as”.</p>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-3">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
-              </div>
-              <p>Here is an almost trivial function: Identity.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'id := λx.x'</span>)
-<span class="hljs-keyword">const</span> id = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x</pre></div></div>
+}</pre></div></div>
             
         </li>
         
@@ -145,7 +83,7 @@ header(<span class="hljs-string">'id := λx.x'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>note: λ is used to indicate a lambda abstraction (read: function). The sole argument is listed to the left of the <code>.</code>, and the return expression is written after the <code>.</code>.</p>
+              <h2 id="introduction">Introduction</h2>
 
             </div>
             
@@ -158,7 +96,7 @@ header(<span class="hljs-string">'id := λx.x'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p>In LC, juxtaposition is function application. That is, <code>qux baz</code> means “apply the qux function to the baz argument”. A space is not strictly necessary; <code>fx</code> means “apply f to x”. Also in LC, you can have meaningless variables that stand for whatever you want. We’ll use ES2015 symbols for this.</p>
+              <p>The Lambda Calculus is a symbol manipulation framework developed by the mathematician Alonzo Church in the 1930s. It was intended to be an extremely tiny syntax which could nevertheless suffice to calculate anything computable. The mathematical advantage of such a syntax is that with such extreme simplicity, it becomes easier to write formal proofs about computational logic – demonstrated when Church solved David Hilbert’s famous Decision Problem using LC.</p>
 
             </div>
             
@@ -171,18 +109,9 @@ header(<span class="hljs-string">'id := λx.x'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p>id foo
-= (λx.x) foo
-= foo</p>
+              <p>Another famous mathematician, Alan Turing, formulated a different model of universal computation – the eponymous Turing Machine. A TM is a hypothetical device, again of extreme simplicity; it can read or write to cells on an infinite tape, each cell containing data or instructions. Turing published a paper also solving the Decision Problem, mere months after Church.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">const</span> foo = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">'foo'</span>)
-<span class="hljs-keyword">const</span> bar = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">'bar'</span>)
-
-demo(<span class="hljs-string">'id foo = foo'</span>, id(foo) === foo)
-demo(<span class="hljs-string">'id bar = bar'</span>, id(bar) === bar)</pre></div></div>
             
         </li>
         
@@ -193,7 +122,7 @@ demo(<span class="hljs-string">'id bar = bar'</span>, id(bar) === bar)</pre></di
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <p>in LC, valid arguments include other lambda abstractions. This is the meaning of “first-class” in the phrase “first-class functions”; functions are values which may be passed into or returned from other functions.</p>
+              <p>Turing proved that the Turing Machine and Lambda Calculus are totally equivalent. Everything that one can calculate, the other can. Not only this, but Turing and Church posited (in the “Church-Turing Thesis”) that these systems capture the definition of computability in a universal way.</p>
 
             </div>
             
@@ -206,14 +135,9 @@ demo(<span class="hljs-string">'id bar = bar'</span>, id(bar) === bar)</pre></di
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <p>id id
-= (λx.x)(λx.x)
-= λx.x</p>
+              <p>Turing Machines are exciting because if a hypothetical machine can compute anything computable, then perhaps a real machine can as well. Modern computers add many features and optimizations beyond what is featured in an actual Turing Machine; these features make the machine more convenient and performant, but do not compromise its essential nature as a universal computing device.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'id id = id'</span>, id(id) === id)</pre></div></div>
             
         </li>
         
@@ -224,7 +148,7 @@ demo(<span class="hljs-string">'id id = id'</span>, id(id) === id)</pre></div></
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
-              <p>of course we can build up more complex expressions. In LC, function application associates left; that is, <code>a b c d</code> = <code>((a b) c) d</code>. Evaluating terms by substituting arguments into function bodies has the fancy term of “β-reduction”. A reducible expression (or “redex”) that has been completely simplified in this fashion is said to be in its “β-normal” or just “normal” form.</p>
+              <p>As machine codes, assemblers, compilers, and higher-level languages have developed to program these real machines, they have largely evolved with a focus on the essence of the machine – memory, statefulness, effects, imperative instructions and so forth. Over time, some of these languages have shifted ever farther into pure abstractions and conceptual description over more machine-centric and stateful models.</p>
 
             </div>
             
@@ -237,12 +161,7 @@ demo(<span class="hljs-string">'id id = id'</span>, id(id) === id)</pre></div></
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
-              <pre><code> id    id       id    id  foo   &lt;--- the initial reducible expression (<span class="hljs-string">"redex"</span>)
-</code></pre><p>= (((id    id)      id)   id) foo   &lt;— application associates left
-= ((    id          id)   id) foo   &lt;— evaluating function applications (“β-reduction”)
-= (           id          id) foo   &lt;— continuing β-reduction
-=                    id       foo   &lt;— more β-reduction
-=                             foo   &lt;— normal form of the original redex</p>
+              <p>However, mathematicians and computer scientists have long known that the entirely abstract lambda calculus, being equivalent to a TM, meant that computations could be expressed in a style totally independent from machine instructions. Instead, a language consisting of first-class function expressions – aka lambda abstractions – could be subsequently compiled into machine code. Such a language would benefit from decades of mathematical research. And just as real computers extend Turing Machines with extra power and convenience, these <em>functional languages</em> would extend the lambda calculus with additional features and under-the-hood shortcuts (such as hardware-based arithmetic).</p>
 
             </div>
             
@@ -255,14 +174,9 @@ demo(<span class="hljs-string">'id id = id'</span>, id(id) === id)</pre></div></
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
-              <p>LC has great overlap with combinatory logic. A pioneer of CL was the mathematician Haskell Curry, whose name now adorns the Haskell language as well as the functional concept of currying. (Curry actually cited the technique from Schönfinkel, and Frege used it even earlier.) Combinatory logic is concerned with combinators, that is, functions which operate only on their inputs. The Identity function is a combinator, often abbreviated I, sometimes called the Idiot bird.</p>
+              <p>What follows is a demonstration, mostly for enjoyment and insight, of the surprising and delightful omnipotence of the lambda calculus. JavaScript, like any functional language, is closely related to LC; it contains the necessary ingredients (variables, parentheses, first-class functions) nestled among the additional luxuries most programmers take for granted.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Idiot := I := id'</span>)
-<span class="hljs-keyword">const</span> I = id
-<span class="hljs-keyword">const</span> Idiot = I</pre></div></div>
             
         </li>
         
@@ -273,12 +187,9 @@ header(<span class="hljs-string">'Idiot := I := id'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
-              <p>Curry was an avid birdwatcher, and the logician Raymond Smullyan named many combinators after birds in his honor. The self-application combinator M (for “Mockingbird”), aka ω (little omega), looks like this:</p>
+              <h1 id="first-steps-with-simple-combinators">First steps with simple combinators</h1>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Mockingbird := M := ω := λf.ff'</span>)</pre></div></div>
             
         </li>
         
@@ -289,13 +200,9 @@ header(<span class="hljs-string">'Mockingbird := M := ω := λf.ff'</span>)</pre
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
-              <p>Remember, <code>fx</code> means “apply f to x.” So <code>ff</code> means “apply f to itself”.</p>
+              <p>Starting simple. A lambda abstraction is simply an anonymous unary function. In LC there are no named functions, but for convenience we will use names. In mathematical notation, <code>:=</code> means “is defined as”.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> ω = <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> fn(fn)
-<span class="hljs-keyword">const</span> M = ω
-<span class="hljs-keyword">const</span> Mockingbird = M</pre></div></div>
             
         </li>
         
@@ -306,7 +213,7 @@ header(<span class="hljs-string">'Mockingbird := M := ω := λf.ff'</span>)</pre
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
-              <p>Can you guess what the Mockingbird of Identity is?</p>
+              <h2 id="identity">Identity</h2>
 
             </div>
             
@@ -319,12 +226,13 @@ header(<span class="hljs-string">'Mockingbird := M := ω := λf.ff'</span>)</pre
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
-              <p>M I
-= (λf.ff)(λx.x)
-= (λx.x)(λx.x) = I I
-= λx.x = I</p>
+              <p>Here is an almost trivial function: Identity, defined as <code>λx.x</code>. <code>λ</code> is used to indicate the start of a lambda abstraction (read: function expression). The sole parameter is listed to the left of the <code>.</code>, and the return expression is written after the <code>.</code>.</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'I := λx.x'</span>)
+<span class="hljs-keyword">const</span> I = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x</pre></div></div>
             
         </li>
         
@@ -335,12 +243,13 @@ header(<span class="hljs-string">'Mockingbird := M := ω := λf.ff'</span>)</pre
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
-              <p>That’s right, it’s the same as id of id… which is id.</p>
+              <p>In LC, variables may be static tokens that stand for whatever you want. We’ll use ES2015 Symbols for this.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'M I = I I = I'</span>, M(I) === I(I) &amp;&amp; I(I) === I)</pre></div></div>
+<span class="hljs-keyword">const</span> tweet = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">'tweet'</span>)
+<span class="hljs-keyword">const</span> chirp = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">'chirp'</span>)</pre></div></div>
             
         </li>
         
@@ -351,7 +260,7 @@ demo(<span class="hljs-string">'M I = I I = I'</span>, M(I) === I(I) &amp;&amp; 
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
-              <p>What about… the Mockingbird of Mockingbird?</p>
+              <p>In LC, juxtaposition is function application. That is, <code>M I</code> means “apply the <code>M</code> function to the <code>I</code> argument”. A space is not strictly necessary; <code>fx</code> usually means “apply <code>f</code> to <code>x</code>“. Some of our examples will use multi-letter variables; to disambiguate them from multiple single-letter variables, we will frequently use SPACED UPPERCASE.</p>
 
             </div>
             
@@ -364,9 +273,16 @@ demo(<span class="hljs-string">'M I = I I = I'</span>, M(I) === I(I) &amp;&amp; 
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
-              <p>That’s the Ω (big Omega) Combinator. It diverges (goes on forever).</p>
+              <pre><code class="lang-lc">I tweet
+= (λx.x) tweet
+= tweet
+</code></pre>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>
+demo(<span class="hljs-string">'I tweet = tweet'</span>, I(tweet) === tweet)
+demo(<span class="hljs-string">'I chirp = chirp'</span>, I(chirp) === chirp)</pre></div></div>
             
         </li>
         
@@ -377,23 +293,9 @@ demo(<span class="hljs-string">'M I = I I = I'</span>, M(I) === I(I) &amp;&amp; 
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
-              <p>M M
-= (λf.ff)(λf.ff)
-= (λf.ff)(λf.ff)
-= (λf.ff)(λf.ff)
-= (λf.ff)(λf.ff)
-…</p>
+              <p>in LC, valid arguments include other lambda abstractions. This is the meaning of “first-class” in the phrase “first-class functions”; functions are values which may be passed into or returned from other functions. In this sense, functions are both like verbs (they can perform a calculation) and nouns (they can be the subject or object of a calculation).</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">try</span> {
-  M(M)
-} <span class="hljs-keyword">catch</span> (err) {
-  demo(<span class="hljs-string">'M M = M M = M M = '</span> + err.message, <span class="hljs-literal">true</span>)
-}
-
-header(<span class="hljs-string">'First encodings: boolean value functions'</span>)</pre></div></div>
             
         </li>
         
@@ -404,7 +306,248 @@ header(<span class="hljs-string">'First encodings: boolean value functions'</spa
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
-              <p>OK this is nice and all, but how can we do anything real with only functions? Let’s start with booleans. Here we need some multi-arg functions… in lambda calc, λabc.a is just shorthand for λa.λb.λc.a, or λa.(λb.(λc.a))). In other words, all functions are curried.</p>
+              <pre><code class="lang-lc">I I
+= (λx.x)(λx.x)
+= λx.x
+</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+demo(<span class="hljs-string">'I I = I'</span>, I(I) === I)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>of course we can build up more complex expressions. In LC, function application associates left; that is, <code>a b c d</code> = <code>((a b) c) d</code>. Evaluating terms by substituting arguments into function bodies has the fancy term of “β-reduction”. A reducible expression (or “redex”) that has been completely simplified in this fashion is said to be in its “β-normal” or just “normal” form.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <pre><code class="lang-lc">     id    id       id    id  tweet   &lt;--- the initial reducible expression (&quot;redex&quot;)
+= (((id    id)      id)   id) tweet   &lt;--- application associates left
+= ((    id          id)   id) tweet   &lt;--- evaluating function applications (&quot;β-reduction&quot;)
+= (           id          id) tweet   &lt;--- continuing β-reduction
+=                    id       tweet   &lt;--- more β-reduction
+=                             tweet   &lt;--- normal form of the original redex
+</code></pre>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p>LC has great overlap with combinatory logic. A pioneer of CL was the mathematician Haskell Curry, whose name now adorns the Haskell language as well as the functional concept of currying. (Curry actually cited the technique from Schönfinkel, and Frege used it even earlier.) Combinatory logic is concerned with combinators, that is, functions which operate only on their inputs. The Identity function is a combinator, often abbreviated I, sometimes called the Idiot bird.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'Idiot := I'</span>)
+<span class="hljs-keyword">const</span> Idiot = I</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <h2 id="self-application">Self-Application</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>Curry was an avid birdwatcher, and the logician Raymond Smullyan named many combinators after birds in his honor. The self-application combinator M (for “Mockingbird”), aka ω (lowercase omega), looks like this:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'Mockingbird := M := ω := λf.ff'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <p>Remember, <code>fx</code> means “apply f to x.” So <code>ff</code> means “apply f to itself”.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> ω = <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> fn(fn)
+<span class="hljs-keyword">const</span> M = ω
+<span class="hljs-keyword">const</span> Mockingbird = M</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <p>Can you guess what the Mockingbird of Identity is?</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <pre><code class="lang-lc">M I
+= (λf.ff)(λx.x)
+= (λx.x)(λx.x) = I I
+= λx.x = I
+</code></pre>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
+              </div>
+              <p>That’s right, it’s the same as Identity of Identity… which is Identity.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+demo(<span class="hljs-string">'M I = I I = I'</span>, M(I) === I(I) &amp;&amp; I(I) === I)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-30">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-30">&#182;</a>
+              </div>
+              <p>What about… the Mockingbird of Mockingbird?</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-31">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <p>That’s the Ω (big Omega) Combinator. It diverges (goes on forever).</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
+              <pre><code class="lang-lc">M M
+= (λf.ff)(λf.ff)
+= (λf.ff)(λf.ff)
+= (λf.ff)(λf.ff)
+= (λf.ff)(λf.ff)
+...
+</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">try</span> {
+  M(M)
+} <span class="hljs-keyword">catch</span> (err) {
+  demo(<span class="hljs-string">'M M = M M = M M = '</span> + err.message, <span class="hljs-literal">true</span>)
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-33">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <h2 id="church-encodings-booleans">Church Encodings: Booleans</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'First encodings: boolean value functions'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-34">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-34">&#182;</a>
+              </div>
+              <p>OK this is nice and all, but how can we do anything real with only functions? Let’s start with booleans. Here we need some multi-arg functions… in lambda calc, <code>λabc.a</code> is just shorthand for <code>λa.λb.λc.a</code>, or <code>λa.(λb.(λc.a)))</code>. In other words, all functions are curried.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-35">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-35">&#182;</a>
+              </div>
+              <h3 id="true-and-false">True and False</h3>
 
             </div>
             
@@ -418,289 +561,19 @@ header(<span class="hljs-string">'F := λxy.y'</span>)
         </li>
         
         
-        <li id="section-21">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-21">&#182;</a>
-              </div>
-              <p>Hm. How can “true” and “false” be functions? Well, the point of booleans is to <em>select</em> between a then-case and an else-case. The LC booleans are just functions which do that! T takes two vals and returns the first; F takes two vals and returns the second. If you apply an unknown bool func to two vals, the first val will be returned if the bool was true, else the second val will be returned.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'T foo bar = foo'</span>, T(foo)(bar) === foo)
-demo(<span class="hljs-string">'F foo bar = bar'</span>, F(foo)(bar) === bar)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-22">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-22">&#182;</a>
-              </div>
-              <p>Another fun way we could have produced F was with the Cardinal combinator. The Cardinal, aka C, aka <code>flip</code>, takes a binary (two-argument) function, and produces a function with reversed argument order.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Cardinal := C := flip := λfab.fba'</span>)
-<span class="hljs-keyword">const</span> flip = <span class="hljs-function"><span class="hljs-params">func</span> =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">b</span> =&gt;</span> func(b)(a)
-<span class="hljs-keyword">const</span> C = flip
-<span class="hljs-keyword">const</span> Cardinal = C</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-23">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-23">&#182;</a>
-              </div>
-              <p>With the Cardinal, we can derive F from the flip of T:</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'F = C T'</span>)
-
-demo(<span class="hljs-string">'flip T foo bar = bar'</span>, flip(T)(foo)(bar) === bar)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-24">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-24">&#182;</a>
-              </div>
-              <p>Regardless of whether you define F manually, or as the flip of T, these functions are <em>encodings</em> of boolean values. They represent booleans in useful and meaningful ways, which preserve the behavior of the values. Specifically, they are Church encodings – representations developed / discovered by Alonzo Church. Their real power is revealed when we start defining logical operations on them.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'not := λb.bFT'</span>)
-<span class="hljs-keyword">const</span> not = <span class="hljs-function"><span class="hljs-params">chooseOne</span> =&gt;</span> chooseOne(F)(T)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-25">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-25">&#182;</a>
-              </div>
-              <p>Remember, booleans in the LC are really functions which select one of two arguments. Try reducing the expression <code>not T</code> yourself, then check your work below.</p>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-26">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-26">&#182;</a>
-              </div>
-              <p>not T
-= (λb.bFT) T
-= TFT
-= (λxy.x) F T
-= F</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'not T = F'</span>, not(T) === F)
-demo(<span class="hljs-string">'not F = T'</span>, not(F) === T)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-27">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-27">&#182;</a>
-              </div>
-              <p>There’s another way we could define <code>not</code>, however, and we’ve already seen it. Remember how the flip of T (aka the Cardinal of T) is F? It works the other way too – CF = T! At least, CF yields a function that behaves identically to T:</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'CF = T'</span>, C(F)(foo)(bar) === foo)
-demo(<span class="hljs-string">'CT = F'</span>, C(T)(foo)(bar) === bar)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-28">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-28">&#182;</a>
-              </div>
-              <p>This means that when it comes to Church encodings of booleans, the Cardinal behaves just like our manually-defined <code>not</code>.</p>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-29">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-29">&#182;</a>
-              </div>
-              <p>Can you construct a function for boolean AND? It will have to take two unknown boolean functions, and route to an output of the correct boolean. Give it a try.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'and := λpq.pqF'</span>)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-30">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-30">&#182;</a>
-              </div>
-              <pre><code>       (λpq.pqp also works)
-</code></pre>
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> and = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> q =&gt; p(q)(F)
-
-demo(<span class="hljs-string">'and F F = F'</span>, and(F)(F) === F)
-demo(<span class="hljs-string">'and T F = F'</span>, and(T)(F) === F)
-demo(<span class="hljs-string">'and F T = F'</span>, and(F)(T) === F)
-demo(<span class="hljs-string">'and T T = T'</span>, and(T)(T) === T)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-31">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-31">&#182;</a>
-              </div>
-              <p>If you work through the logic, you might notice that this function exhibits short-circuiting; if p = F, we don’t bother using q. Similarly, our OR function below short circuits; if p is T, we don’t bother using q.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'or := λpq.pTq'</span>)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-32">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-32">&#182;</a>
-              </div>
-              <pre><code>      (λpq.ppq also works)
-</code></pre>
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> or = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> q =&gt; p(T)(q)
-
-demo(<span class="hljs-string">'or F F = F'</span>, or(F)(F) === F)
-demo(<span class="hljs-string">'or T F = T'</span>, or(T)(F) === T)
-demo(<span class="hljs-string">'or F T = T'</span>, or(F)(T) === T)
-demo(<span class="hljs-string">'or T T = T'</span>, or(T)(T) === T)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-33">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-33">&#182;</a>
-              </div>
-              <p>λpq.ppq also works because if p is true, it is supposed to select T, but p = T, so we can just reuse it. Notice something interesting here: λpq.ppq behaves exactly like the Mockingbird. It takes a value, p, and self-applies p (producing <code>pp</code>). Well, Mp = pp. Then you can apply that result to another value q, to get ppq; Mpq = ppq. So M = λpq.ppq. The Mockingbird works as a boolean OR function:</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'M F F = F'</span>, M(F)(F) === F)
-demo(<span class="hljs-string">'M T F = T'</span>, M(T)(F) === T)
-demo(<span class="hljs-string">'M F T = T'</span>, M(F)(T) === T)
-demo(<span class="hljs-string">'M T T = T'</span>, M(T)(T) === T)</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-34">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-34">&#182;</a>
-              </div>
-              <p>With working booleans, we can illustrate some more complex logic, such as one of De Morgan’s Laws: <code>!(p &amp;&amp; q) === (!p) || (!q)</code>.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'De Morgan: not (and P Q) = or (not P) (not Q)'</span>)
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deMorgansLawDemo</span> (<span class="hljs-params">p, q</span>) </span>{ <span class="hljs-keyword">return</span> not(and(p)(q)) === or(not(p))(not(q)) }
-
-demo(<span class="hljs-string">'not (and F F) = or (not F) (not F)'</span>, deMorgansLawDemo(F, F))
-demo(<span class="hljs-string">'not (and T F) = or (not T) (not F)'</span>, deMorgansLawDemo(T, F))
-demo(<span class="hljs-string">'not (and F T) = or (not F) (not T)'</span>, deMorgansLawDemo(F, T))
-demo(<span class="hljs-string">'not (and T T) = or (not T) (not T)'</span>, deMorgansLawDemo(T, T))</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-35">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-35">&#182;</a>
-              </div>
-              <p>However, this whole time we have been cheating in the demonstrations. Lambda calculus doesn’t have any <code>===</code> operator to check for equality! Don’t fret though, everything is functions. We can define our own equality function for booleans.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'beq := λpq.p (qTF) (qFT)'</span>)
-<span class="hljs-keyword">const</span> beq = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> q =&gt; p( q(T)(F) )( q(F)(T) )
-
-demo(<span class="hljs-string">'beq F F = T'</span>, beq( beq(F)(F) )(T))
-demo(<span class="hljs-string">'beq F T = F'</span>, beq( beq(F)(T) )(F))
-demo(<span class="hljs-string">'beq T F = F'</span>, beq( beq(T)(F) )(F))
-demo(<span class="hljs-string">'beq T T = T'</span>, beq( beq(T)(T) )(T))</pre></div></div>
-            
-        </li>
-        
-        
         <li id="section-36">
             <div class="annotation">
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-36">&#182;</a>
               </div>
-              <p>Not a JS operator in sight (our <code>demo</code> function accepts church encodings). But for clarity’s sake, we’ll go back to using JS’s equality operator in our <code>demo</code> calls.</p>
+              <p>Hm. How can “true” and “false” be functions? Well, the point of booleans is to <em>select</em> between a then-case and an else-case. The LC booleans are just functions which do that! <code>T</code> takes two vals and returns the first; <code>F</code> takes two vals and returns the second. If you apply an unknown bool func to two vals, the first val will be returned if the bool was true, else the second val will be returned.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Numbers'</span>)</pre></div></div>
+demo(<span class="hljs-string">'T tweet chirp = tweet'</span>, T(tweet)(chirp) === tweet)
+demo(<span class="hljs-string">'F tweet chirp = chirp'</span>, F(tweet)(chirp) === chirp)</pre></div></div>
             
         </li>
         
@@ -711,7 +584,7 @@ header(<span class="hljs-string">'Numbers'</span>)</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-37">&#182;</a>
               </div>
-              <p>Booleans are neat, but surely to compute arithmetic you need language-supported math. Right? …Nah. You can construct math from scratch.</p>
+              <h3 id="flipping-arguments">Flipping Arguments</h3>
 
             </div>
             
@@ -724,9 +597,15 @@ header(<span class="hljs-string">'Numbers'</span>)</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-38">&#182;</a>
               </div>
-              <p>The Church encoding for a natural number n is an n-fold compositor (composing combinator). In other words, “2” is a function that composes a function f twice: 2 f x = f(f(x)). Whereas “4” is a function that composes any f four times: 4 f x = f(f(f(f(x). In this sense, 2 and 3 can be read more like “two-fold” and “three-fold”, or “twice” and “thrice”.</p>
+              <p>Another fun way we could have produced F was with the Cardinal combinator. The Cardinal, aka <code>C</code>, aka <code>flip</code>, takes a binary (two-argument) function, and produces a function with reversed argument order.</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'Cardinal := C := flip := λfab.fba'</span>)
+<span class="hljs-keyword">const</span> flip = <span class="hljs-function"><span class="hljs-params">func</span> =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">b</span> =&gt;</span> func(b)(a)
+<span class="hljs-keyword">const</span> C = flip
+<span class="hljs-keyword">const</span> Cardinal = C</pre></div></div>
             
         </li>
         
@@ -737,12 +616,14 @@ header(<span class="hljs-string">'Numbers'</span>)</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-39">&#182;</a>
               </div>
-              <p>In this system, zero is a function which applies a function f zero times to x. So… zero ignores the function argument, just returning x; 0 f x = x.</p>
+              <p>With the Cardinal, we can derive <code>F</code> from the flip of <code>T</code>:</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'0 := λfx.x'</span>)</pre></div></div>
+header(<span class="hljs-string">'F = C T'</span>)
+
+demo(<span class="hljs-string">'flip T tweet chirp = chirp'</span>, flip(T)(tweet)(chirp) === chirp)</pre></div></div>
             
         </li>
         
@@ -753,11 +634,9 @@ header(<span class="hljs-string">'0 := λfx.x'</span>)</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-40">&#182;</a>
               </div>
-              <p>(fun fact, 0 = F)</p>
+              <p>Regardless of whether you define <code>F</code> manually, or as the flip of <code>T</code>, these functions are <em>encodings</em> of boolean values. They represent booleans in useful and meaningful ways, which preserve the behavior of the values. Specifically, they are Church encodings – representations developed / discovered by Alonzo Church. Their real power is revealed when we start defining logical operations on them.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> zero = <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> x =&gt; x</pre></div></div>
             
         </li>
         
@@ -768,11 +647,13 @@ header(<span class="hljs-string">'0 := λfx.x'</span>)</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-41">&#182;</a>
               </div>
-              <p>zero Mockingbirds of <code>foo</code> is just <code>foo</code>. Good thing too, because applying Mockingbird to <code>foo</code> would throw an error in JS (though it would work fine in LC).</p>
+              <h3 id="negation">Negation</h3>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>demo(<span class="hljs-string">'0 M foo = foo'</span>, zero(M)(foo) === foo)</pre></div></div>
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'NOT := λb.bFT'</span>)
+<span class="hljs-keyword">const</span> NOT = <span class="hljs-function"><span class="hljs-params">chooseOne</span> =&gt;</span> chooseOne(F)(T)</pre></div></div>
             
         </li>
         
@@ -783,15 +664,9 @@ header(<span class="hljs-string">'0 := λfx.x'</span>)</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-42">&#182;</a>
               </div>
-              <p>we could hard-code one as a single application of f…</p>
+              <p>Remember, booleans in the LC are really functions which select one of two arguments. Try reducing the expression <code>NOT T</code> yourself, then check your work below.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'hard-coded 1 and 2'</span>)
-
-header(<span class="hljs-string">'1 := λfx.fx'</span>)
-<span class="hljs-keyword">const</span> once = <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> x =&gt; fn(x)</pre></div></div>
             
         </li>
         
@@ -802,12 +677,17 @@ header(<span class="hljs-string">'1 := λfx.fx'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-43">&#182;</a>
               </div>
-              <p>another fun fact – this is one step removed from I, called I* (“I-star”). In fact we could have shortened this to be <code>1 := I</code>. So 0 is false and 1 is identity, how nice.</p>
+              <p>NOT T
+= (λb.bFT) T
+= TFT
+= (λxy.x) F T
+= F</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'1 I foo = foo'</span>, once(I)(foo) === foo)</pre></div></div>
+demo(<span class="hljs-string">'NOT T = F'</span>, NOT(T) === F)
+demo(<span class="hljs-string">'NOT F = T'</span>, NOT(F) === T)</pre></div></div>
             
         </li>
         
@@ -818,16 +698,13 @@ demo(<span class="hljs-string">'1 I foo = foo'</span>, once(I)(foo) === foo)</pr
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-44">&#182;</a>
               </div>
-              <p>id is boring however because the n-fold composition of id is always id, even for n=0. The above example doesn’t really prove our function is doing anything interesting. Let’s cheat a bit with some string ops (note, this is polluting LC with some JS, but it’s just for demonstration):</p>
+              <p>There’s another way we could define <code>NOT</code>, however, and we’ve already seen it. Remember how the flip of <code>T</code> (aka the Cardinal of <code>T</code>) is <code>F</code>? It works the other way too – <code>C F = T</code>! At least, <code>C F</code> yields a function that behaves identically to <code>T</code>:</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">const</span> λ = <span class="hljs-string">'λ'</span>
-<span class="hljs-keyword">const</span> yell = <span class="hljs-function"><span class="hljs-params">str</span> =&gt;</span> str + <span class="hljs-string">'!'</span>
-
-demo(<span class="hljs-string">'0 yell λ = λ'</span>, zero(yell)(λ) === <span class="hljs-string">'λ'</span>)
-demo(<span class="hljs-string">'1 yell λ = yell λ = λ!'</span>, once(yell)(λ) === <span class="hljs-string">'λ!'</span>)</pre></div></div>
+demo(<span class="hljs-string">'CF = T'</span>, C(F)(tweet)(chirp) === tweet)
+demo(<span class="hljs-string">'CT = F'</span>, C(T)(tweet)(chirp) === chirp)</pre></div></div>
             
         </li>
         
@@ -838,15 +715,9 @@ demo(<span class="hljs-string">'1 yell λ = yell λ = λ!'</span>, once(yell)(λ
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
-              <p>we could also hard-code two.</p>
+              <p>This means that when it comes to Church encodings of booleans, the Cardinal behaves just like our manually-defined <code>NOT</code>.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'2 := λfx.f(fx)'</span>)
-<span class="hljs-keyword">const</span> twice = <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> x =&gt; fn(fn(x))
-
-demo(<span class="hljs-string">'2 yell λ = yell (yell λ) = λ!!'</span>, twice(yell)(λ) === <span class="hljs-string">'λ!!'</span>)</pre></div></div>
             
         </li>
         
@@ -857,15 +728,9 @@ demo(<span class="hljs-string">'2 yell λ = yell (yell λ) = λ!!'</span>, twice
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
-              <p>This hard-coding is lame though. We can’t do math like this. What we need is a way to count up.</p>
+              <h3 id="conjunction-and-disjunction">Conjunction and Disjunction</h3>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'successor'</span>)
-
-header(<span class="hljs-string">'successor := λnfx.f(nfx)'</span>)
-<span class="hljs-keyword">const</span> successor = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> fn =&gt; <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> fn(num(fn)(x))</pre></div></div>
             
         </li>
         
@@ -876,18 +741,12 @@ header(<span class="hljs-string">'successor := λnfx.f(nfx)'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-47">&#182;</a>
               </div>
-              <p>Don’t get lost in the weeds. All we are saying is that the successor of n does n compositions of f to a value x, and then it does <em>one more</em> application of f to the result. Therefore, it ends up doing 1 + n compositions of f in total.</p>
+              <p>Can you construct a function for boolean <code>AND</code>? It will have to take two unknown boolean functions as parameters, and route to an output of the correct boolean result. Give it a try.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">const</span> newOnce   = successor(zero)
-<span class="hljs-keyword">const</span> newTwice  = successor(successor(zero)) <span class="hljs-comment">// we can use multiple successors on zero, or…</span>
-<span class="hljs-keyword">const</span> newThrice = successor(newTwice) <span class="hljs-comment">// …apply successor to already-obtained numbers.</span>
-
-demo(<span class="hljs-string">'1 yell λ = λ!'</span>,     newOnce(yell)(λ) === <span class="hljs-string">'λ!'</span>)
-demo(<span class="hljs-string">'2 yell λ = λ!!'</span>,   newTwice(yell)(λ) === <span class="hljs-string">'λ!!'</span>)
-demo(<span class="hljs-string">'3 yell λ = λ!!!'</span>, newThrice(yell)(λ) === <span class="hljs-string">'λ!!!'</span>)</pre></div></div>
+header(<span class="hljs-string">'AND := λpq.pqF'</span>)</pre></div></div>
             
         </li>
         
@@ -898,9 +757,17 @@ demo(<span class="hljs-string">'3 yell λ = λ!!!'</span>, newThrice(yell)(λ) =
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-48">&#182;</a>
               </div>
-              <p>There is another way to write successor. Point-free (some joke “point-less”) notation means to define a function purely as a combination of other functions, without explicitly writing arguments. Sometimes this style reveals what a function <em>is</em> rather than what explain what it <em>does</em>. Other times it can be abused to produce incomprehensible gibberish. Successor is a good candidate for it, however.</p>
+              <p>(λpq.pqp also works; can you see why?)</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">const</span> AND = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> q =&gt; p(q)(F)
+
+demo(<span class="hljs-string">'AND F F = F'</span>, AND(F)(F) === F)
+demo(<span class="hljs-string">'AND T F = F'</span>, AND(T)(F) === F)
+demo(<span class="hljs-string">'AND F T = F'</span>, AND(F)(T) === F)
+demo(<span class="hljs-string">'AND T T = T'</span>, AND(T)(T) === T)</pre></div></div>
             
         </li>
         
@@ -911,18 +778,12 @@ demo(<span class="hljs-string">'3 yell λ = λ!!!'</span>, newThrice(yell)(λ) =
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-49">&#182;</a>
               </div>
-              <p>We are doing n-fold compositions, so let’s define an actual <code>compose</code> function to help. Composition is often notated as ∘ in infix position: (f ∘ g) x = f(g(x)). However, Lambda Calculus only includes prefix position function application. Smullyan named this the Bluebird or B combinator.</p>
+              <p>If you work through the logic, you might notice that this function exhibits short-circuiting. If <code>p = F</code>, we don’t bother using <code>q</code>. Similarly, our <code>OR</code> function below short circuits; if <code>p = T</code>, we don’t bother using <code>q</code>.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Bluebird := B := (∘) := compose := λfgx.f(gx)'</span>)
-<span class="hljs-keyword">const</span> compose = <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> g =&gt; <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> f(g(x))
-<span class="hljs-keyword">const</span> B = compose
-<span class="hljs-keyword">const</span> Bluebird = B
-
-demo(<span class="hljs-string">'(B not not)  T =  not (not T)'</span>, (B(not)(not))(T)  === not(not(T)))
-demo(<span class="hljs-string">'(B yell not) F = yell (not F)'</span>, (B(yell)(not))(F) === yell(not(F)))</pre></div></div>
+header(<span class="hljs-string">'OR := λpq.pTq'</span>)</pre></div></div>
             
         </li>
         
@@ -933,13 +794,17 @@ demo(<span class="hljs-string">'(B yell not) F = yell (not F)'</span>, (B(yell)(
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-50">&#182;</a>
               </div>
-              <p>Now that we have an actual composition function, we can define successor without mentioning the final <code>x</code> value argument.</p>
+              <p>(λpq.ppq also works)</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'succ := λnf.f∘(nf) = λnf.Bf(nf)'</span>)
-<span class="hljs-keyword">const</span> succ = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> fn =&gt; compose( fn )( num(fn) )</pre></div></div>
+<span class="hljs-keyword">const</span> OR = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> q =&gt; p(T)(q)
+
+demo(<span class="hljs-string">'OR F F = F'</span>, OR(F)(F) === F)
+demo(<span class="hljs-string">'OR T F = T'</span>, OR(T)(F) === T)
+demo(<span class="hljs-string">'OR F T = T'</span>, OR(F)(T) === T)
+demo(<span class="hljs-string">'OR T T = T'</span>, OR(T)(T) === T)</pre></div></div>
             
         </li>
         
@@ -950,21 +815,15 @@ header(<span class="hljs-string">'succ := λnf.f∘(nf) = λnf.Bf(nf)'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-51">&#182;</a>
               </div>
-              <p>This is just a terse way of repeating what we already know: if a given <code>n</code> composes some function <code>f</code> n times, then the successor of n is a function which composes one additional <code>f</code>, for a total of 1 + n compositions.</p>
+              <p><code>λpq.ppq</code> also works because if <code>p</code> is true, it is supposed to select <code>T</code>, but <code>p = T</code>, so we can just reuse it. Notice something interesting here: <code>λpq.ppq</code> behaves exactly like the Mockingbird. It takes a value, <code>p</code>, and self-applies <code>p</code> (producing <code>pp</code>). Well, <code>Mp = pp</code>, and you can apply that result to another value <code>q</code>, to get <code>ppq</code>; therefore, <code>Mpq = ppq</code>. So <code>M</code> and <code>λpq.ppq</code> behave identically (i.e. they are “extensionally equivalent”, and in fact <code>λpq.ppq</code> is sometimes called <code>M*</code> or “the Mockinbird once-removed”. The Mockingbird works as a boolean <code>OR</code> function:</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">const</span> n0 = zero
-<span class="hljs-keyword">const</span> n1 = succ(n0)
-<span class="hljs-keyword">const</span> n2 = succ(succ(n0))
-<span class="hljs-keyword">const</span> n3 = succ(succ(succ(n0)))
-<span class="hljs-keyword">const</span> n4 = succ(n3)
-
-demo(<span class="hljs-string">'1 yell λ = λ!'</span>,    n1(yell)(λ) === <span class="hljs-string">'λ!'</span>)
-demo(<span class="hljs-string">'2 yell λ = λ!!'</span>,   n2(yell)(λ) === <span class="hljs-string">'λ!!'</span>)
-demo(<span class="hljs-string">'3 yell λ = λ!!!'</span>,  n3(yell)(λ) === <span class="hljs-string">'λ!!!'</span>)
-demo(<span class="hljs-string">'4 yell λ = λ!!!!'</span>, n4(yell)(λ) === <span class="hljs-string">'λ!!!!'</span>)</pre></div></div>
+demo(<span class="hljs-string">'M F F = F'</span>, M(F)(F) === F)
+demo(<span class="hljs-string">'M T F = T'</span>, M(T)(F) === T)
+demo(<span class="hljs-string">'M F T = T'</span>, M(F)(T) === T)
+demo(<span class="hljs-string">'M T T = T'</span>, M(T)(T) === T)</pre></div></div>
             
         </li>
         
@@ -975,13 +834,9 @@ demo(<span class="hljs-string">'4 yell λ = λ!!!!'</span>, n4(yell)(λ) === <sp
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-52">&#182;</a>
               </div>
-              <p>Things will get pretty slow if we can only increment by 1. Let’s add addition.</p>
+              <h3 id="demo-de-morgan-s-laws">Demo: De Morgan’s Laws</h3>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'add := λab.a(succ)b'</span>)
-<span class="hljs-keyword">const</span> add = <span class="hljs-function"><span class="hljs-params">numA</span> =&gt;</span> numB =&gt; numA(succ)(numB)</pre></div></div>
             
         </li>
         
@@ -992,17 +847,19 @@ header(<span class="hljs-string">'add := λab.a(succ)b'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-53">&#182;</a>
               </div>
-              <p>Aha, addition is just the Ath successor of B. Makes sense. For example, <code>add 3 2 = 3 succ 2</code>, which could be read as “thrice successor of twice”.</p>
+              <p>With working booleans, we can illustrate some more complex logic, such as one of De Morgan’s Laws: <code>!(p &amp;&amp; q) === (!p) || (!q)</code>.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">const</span> n5 = add(n2)(n3)
-<span class="hljs-keyword">const</span> n6 = add(n3)(n3)
+header(<span class="hljs-string">'De Morgan: not (and P Q) = or (not P) (not Q)'</span>)
 
-demo(<span class="hljs-string">'add 5 2 yell λ = λ!!!!!!!'</span>, add(n5)(n2)(yell)(λ) === <span class="hljs-string">'λ!!!!!!!'</span>)
-demo(<span class="hljs-string">'add 0 3 yell λ = λ!!!'</span>,     add(n0)(n3)(yell)(λ) === <span class="hljs-string">'λ!!!'</span>)
-demo(<span class="hljs-string">'add 2 2 = 4'</span>,               add(n2)(n2)(yell)(λ) === n4(yell)(λ))</pre></div></div>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deMorgansLawDemo</span> (<span class="hljs-params">p, q</span>) </span>{ <span class="hljs-keyword">return</span> NOT(AND(p)(q)) === OR(NOT(p))(NOT(q)) }
+
+demo(<span class="hljs-string">'NOT (AND F F) = OR (NOT F) (NOT F)'</span>, deMorgansLawDemo(F, F))
+demo(<span class="hljs-string">'NOT (AND T F) = OR (NOT T) (NOT F)'</span>, deMorgansLawDemo(T, F))
+demo(<span class="hljs-string">'NOT (AND F T) = OR (NOT F) (NOT T)'</span>, deMorgansLawDemo(F, T))
+demo(<span class="hljs-string">'NOT (AND T T) = OR (NOT T) (NOT T)'</span>, deMorgansLawDemo(T, T))</pre></div></div>
             
         </li>
         
@@ -1013,19 +870,9 @@ demo(<span class="hljs-string">'add 2 2 = 4'</span>,               add(n2)(n2)(y
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-54">&#182;</a>
               </div>
-              <p>These equivalence checks using <code>yell</code> and ‘λ’ are a bit verbose. It’s annoying, but a mathematical truth, that there can be no general algorithm to decide if two functions are equivalent – and we cannot rely on JS function equality because we are generating independent function objects. Since <code>yell</code> and ‘λ’ are already impure non-LC code, we might as well go all the way and define <code>church</code> and <code>jsnum</code> to convert between Church encodings and JS numbers.</p>
+              <h3 id="boolean-equality">Boolean Equality</h3>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'LC &lt;-&gt; JS: church &amp; jsnum'</span>)
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">church</span> (<span class="hljs-params">n</span>) </span>{ <span class="hljs-keyword">return</span> n === <span class="hljs-number">0</span> ? n0 : succ(church(n - <span class="hljs-number">1</span>)) }
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsnum</span> (<span class="hljs-params">c</span>) </span>{ <span class="hljs-keyword">return</span> c(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x + <span class="hljs-number">1</span>)(<span class="hljs-number">0</span>) }
-
-demo(        <span class="hljs-string">'church(5) = n5'</span>, church(<span class="hljs-number">5</span>)(yell)(λ) === n5(yell)(λ))
-demo(       <span class="hljs-string">'jsnum(n5) === 5'</span>,          jsnum(n5) === <span class="hljs-number">5</span>)
-demo(<span class="hljs-string">'jsnum(church(2)) === 2'</span>,   jsnum(church(<span class="hljs-number">2</span>)) === <span class="hljs-number">2</span>)</pre></div></div>
             
         </li>
         
@@ -1036,13 +883,18 @@ demo(<span class="hljs-string">'jsnum(church(2)) === 2'</span>,   jsnum(church(<
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-55">&#182;</a>
               </div>
-              <p>Back to math. How about multiplication?</p>
+              <p>However, this whole time we have been cheating in the demonstrations. Lambda calculus doesn’t have any <code>===</code> operator to check for equality! Don’t fret though, everything is functions. We can define our own equality function for booleans.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'mult := λab.a∘b = compose'</span>)
-<span class="hljs-keyword">const</span> mult = compose</pre></div></div>
+header(<span class="hljs-string">'BEQ := λpq.p (qTF) (qFT)'</span>)
+<span class="hljs-keyword">const</span> BEQ = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> q =&gt; p( q(T)(F) )( q(F)(T) )
+
+demo(<span class="hljs-string">'BEQ F F = T'</span>, BEQ( BEQ(F)(F) )(T))
+demo(<span class="hljs-string">'BEQ F T = F'</span>, BEQ( BEQ(F)(T) )(F))
+demo(<span class="hljs-string">'BEQ T F = F'</span>, BEQ( BEQ(T)(F) )(F))
+demo(<span class="hljs-string">'BEQ T T = T'</span>, BEQ( BEQ(T)(T) )(T))</pre></div></div>
             
         </li>
         
@@ -1053,15 +905,9 @@ header(<span class="hljs-string">'mult := λab.a∘b = compose'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-56">&#182;</a>
               </div>
-              <p>How beautiful! Multiplication is the composition of numbers. For example, <code>mult 3 2 = 3 ∘ 2</code>, which could be read as “thrice of twice”, or “three of (two of (someFn))”. If you compose a function f two times — <code>f ∘ f</code> — and then you compose that result three times — <code>(f∘f) ∘ (f∘f) ∘ (f∘f)</code> — you get the six-fold composition of f: <code>f ∘ f ∘ f ∘ f ∘ f ∘ f</code>. It helps to know that composition is associative — <code>f ∘ (g ∘ h) = (f ∘ g) ∘ h</code>.</p>
+              <p>Not a JS operator in sight (our <code>demo</code> function accepts church encodings). But for clarity’s sake, we’ll go back to using JS’s equality operator in our <code>demo</code> calls.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'mult 1 5 = 5'</span>, jsnum( mult(n1)(n5) ) === <span class="hljs-number">5</span>)
-demo(<span class="hljs-string">'mult 3 2 = 6'</span>, jsnum( mult(n3)(n2) ) === <span class="hljs-number">6</span>)
-demo(<span class="hljs-string">'mult 4 0 = 0'</span>, jsnum( mult(n4)(n0) ) === <span class="hljs-number">0</span>)
-demo(<span class="hljs-string">'mult 6 2 yell λ = λ!!!!!!!!!!!!'</span>, mult(n6)(n2)(yell)(λ) === <span class="hljs-string">'λ!!!!!!!!!!!!'</span>)</pre></div></div>
             
         </li>
         
@@ -1072,13 +918,12 @@ demo(<span class="hljs-string">'mult 6 2 yell λ = λ!!!!!!!!!!!!'</span>, mult(
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-57">&#182;</a>
               </div>
-              <p>Exponentiation is remarkably clean too. When we say 2^3, we are saying “multiply two by itself three times”; or putting it another way, “twice of twice of twice”. So for any base and power, the result is the power-fold composition of the base:</p>
+              <h2 id="church-encodings-numerals">Church Encodings: Numerals</h2>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Thrush := pow := λab.ba'</span>)
-<span class="hljs-keyword">const</span> pow = <span class="hljs-function"><span class="hljs-params">numA</span> =&gt;</span> numB =&gt; numB(numA)</pre></div></div>
+header(<span class="hljs-string">'Numbers'</span>)</pre></div></div>
             
         </li>
         
@@ -1089,18 +934,9 @@ header(<span class="hljs-string">'Thrush := pow := λab.ba'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-58">&#182;</a>
               </div>
-              <p>As you can see, we also call this combinator the Thrush. Unfortunately we have a name collision as we already defined T as the church encoding of true, so we omit the single-letter version of this combinator. There is another letter sometimes reserved for true, in which case we can use T for Thrush; the alternate true combinator name is coming up soon.</p>
+              <p>Booleans are neat, but surely to compute arithmetic you need language-supported math. Right? …Nah. You can construct math from scratch.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">const</span> n8 = mult(n4)(n2)
-<span class="hljs-keyword">const</span> n9 = succ(n8)
-
-demo(<span class="hljs-string">'pow 2 3 = 8'</span>, jsnum( pow(n2)(n3) ) === <span class="hljs-number">8</span>)
-demo(<span class="hljs-string">'pow 3 2 = 9'</span>, jsnum( pow(n3)(n2) ) === <span class="hljs-number">9</span>)
-demo(<span class="hljs-string">'pow 6 1 = 6'</span>, jsnum( pow(n6)(n1) ) === <span class="hljs-number">6</span>)
-demo(<span class="hljs-string">'pow 5 0 = 1'</span>, jsnum( pow(n5)(n0) ) === <span class="hljs-number">1</span>)</pre></div></div>
             
         </li>
         
@@ -1111,7 +947,7 @@ demo(<span class="hljs-string">'pow 5 0 = 1'</span>, jsnum( pow(n5)(n0) ) === <s
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-59">&#182;</a>
               </div>
-              <p>As stated earlier, there is no general function-equivalence algorithm (this lies at the heart of Church’s research efforts into “decidability”). But just as we did for booleans, we can develop a specific equality check for numbers.</p>
+              <p>The Church encoding for a natural number n is an n-fold “compositor” (composing combinator). In other words, “2” is a function that composes a function <code>f</code> twice: <code>2 f x = f(f(x))</code>. Whereas “4” is a function that composes any <code>f</code> four times: <code>4 f x = f(f(f(f(x)</code>. In this sense, 2 and 3 can be read more like “two-fold” and “three-fold”, or “twice” and “thrice”.</p>
 
             </div>
             
@@ -1124,17 +960,9 @@ demo(<span class="hljs-string">'pow 5 0 = 1'</span>, jsnum( pow(n5)(n0) ) === <s
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-60">&#182;</a>
               </div>
-              <p>We start with zero. If our input is zero, we want to produce T. Otherwise, we want to produce F. In our function below, if the input is zero, we run the inner function zero times, which means we return the final argument (T). However, if the input is any number greater than zero, we run the inner function at least once; that inner function is designed to always produce F.</p>
+              <h3 id="hard-coded-numbers">Hard-Coded Numbers</h3>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'isZero := λn.n(λ_.F)T'</span>)
-<span class="hljs-keyword">const</span> isZero = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num(<span class="hljs-function"><span class="hljs-params">_</span> =&gt;</span> F)(T)
-
-demo(<span class="hljs-string">'isZero 0 = T'</span>, isZero(n0) === T)
-demo(<span class="hljs-string">'isZero 1 = F'</span>, isZero(n1) === F)
-demo(<span class="hljs-string">'isZero 2 = F'</span>, isZero(n2) === F)</pre></div></div>
             
         </li>
         
@@ -1145,21 +973,12 @@ demo(<span class="hljs-string">'isZero 2 = F'</span>, isZero(n2) === F)</pre></d
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-61">&#182;</a>
               </div>
-              <p>isZero used a nice trick to produce a constant. We’ll abstract that out. This is the Kestrel combinator K, named for the German word “Konstante”. The K combinator takes a value, and produces a function which ignores its input, always returning the original value. So, K0 is a function that always returns 0; (K foo) is a function which always returns foo.</p>
+              <p>In this system, <code>ZERO</code> is a function which applies a function <code>f</code> zero times to <code>x</code>. So… <code>ZERO</code> ignores the function argument, just returning <code>x</code>; <code>0 f x = x</code>.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Kestrel combinator and is0'</span>)
-
-header(<span class="hljs-string">'Kestrel := K := konst := λk_.k'</span>)
-<span class="hljs-keyword">const</span> konst = <span class="hljs-function"><span class="hljs-params">k</span> =&gt;</span> _ =&gt; k
-<span class="hljs-keyword">const</span> K = konst
-<span class="hljs-keyword">const</span> Kestrel = K
-
-demo(<span class="hljs-string">'K0 foo = 0'</span>, K(zero)(foo) === zero)
-demo(<span class="hljs-string">'K0 bar = 0'</span>, K(zero)(bar) === zero)
-demo(<span class="hljs-string">'K foo bar = foo'</span>, K(foo)(bar) === foo)</pre></div></div>
+header(<span class="hljs-string">'0 := λfx.x'</span>)</pre></div></div>
             
         </li>
         
@@ -1170,17 +989,11 @@ demo(<span class="hljs-string">'K foo bar = foo'</span>, K(foo)(bar) === foo)</p
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-62">&#182;</a>
               </div>
-              <p>With K, we can redefine our isZero function more concisely.</p>
+              <p>(fun fact, <code>0 = F</code>)</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'is0 := λn.n(KF)T'</span>)
-<span class="hljs-keyword">const</span> is0 = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num(K(F))(T)
-
-demo(<span class="hljs-string">'is0 0 = T'</span>, is0(n0) === T)
-demo(<span class="hljs-string">'is0 1 = F'</span>, is0(n1) === F)
-demo(<span class="hljs-string">'is0 2 = F'</span>, is0(n2) === F)</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> ZERO = <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> x =&gt; x</pre></div></div>
             
         </li>
         
@@ -1191,20 +1004,12 @@ demo(<span class="hljs-string">'is0 2 = F'</span>, is0(n2) === F)</pre></div></d
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-63">&#182;</a>
               </div>
-              <p>K should look familiar; it’s alpha-equivalent to T. Alpha-equivalence means it is identical except for variable names, which are arbitrary and don’t affect the behavior: (λk_.k = λab.a). We can also make F out of K and I. Try tracing through the logic and confirming that KI = F. This result is known as the Kite.</p>
+              <p>Zero applications of Mockingbird to <code>tweet</code> is just <code>tweet</code>. Good thing too, because applying Mockingbird to <code>tweet</code> would throw an error in JS (though it would work fine in LC, just by not simplifying further).</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'         K = T'</span>)
-header(<span class="hljs-string">'Kite := KI = F'</span>)
-<span class="hljs-keyword">const</span> Tru = K
-<span class="hljs-keyword">const</span> Fls = K(I)
-<span class="hljs-keyword">const</span> Kite = Fls
-
-demo(<span class="hljs-string">'K  foo bar = foo'</span>, Tru(foo)(bar) === foo)
-demo(<span class="hljs-string">'KI foo bar = bar'</span>, Fls(foo)(bar) === bar)
-demo(<span class="hljs-string">'De Morgan using K and KI'</span>, deMorgansLawDemo(K, K(I)))</pre></div></div>
+demo(<span class="hljs-string">'0 M tweet = tweet'</span>, ZERO(M)(tweet) === tweet)</pre></div></div>
             
         </li>
         
@@ -1215,18 +1020,15 @@ demo(<span class="hljs-string">'De Morgan using K and KI'</span>, deMorgansLawDe
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-64">&#182;</a>
               </div>
-              <p>We’re still a way off from numeric equality. To get it working we’ll need <code>succ</code>‘s opposite, <code>pred</code> (predecessor). For a given num, <code>pred</code> gives you the number that came before, unless we’re at 0, in which case it just gives you 0. It is possible to define predecessor using only the tools we’ve built thus far, but it’s quite difficult to comprehend. Glance at it, but we’ll be seeing a better version soon:</p>
+              <p>We could hard-code <code>ONCE</code> as a single application of <code>f</code>…</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'predecessor := λn.n (λg.is0 (g 1) I (B succ g)) (K0) 0'</span>)
-<span class="hljs-keyword">const</span> predecessor = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num(<span class="hljs-function"><span class="hljs-params">g</span> =&gt;</span> is0(g(n1))(I)(B(succ)(g)))(K(n0))(n0)
+header(<span class="hljs-string">'hard-coded 1 and 2'</span>)
 
-demo(<span class="hljs-string">'predecessor 0 = 0'</span>, jsnum( predecessor(n0) ) === <span class="hljs-number">0</span>)
-demo(<span class="hljs-string">'predecessor 1 = 0'</span>, jsnum( predecessor(n1) ) === <span class="hljs-number">0</span>)
-demo(<span class="hljs-string">'predecessor 2 = 1'</span>, jsnum( predecessor(n2) ) === <span class="hljs-number">1</span>)
-demo(<span class="hljs-string">'predecessor 3 = 2'</span>, jsnum( predecessor(n3) ) === <span class="hljs-number">2</span>)</pre></div></div>
+header(<span class="hljs-string">'1 := λfx.fx'</span>)
+<span class="hljs-keyword">const</span> ONCE = <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> x =&gt; fn(x)</pre></div></div>
             
         </li>
         
@@ -1237,12 +1039,12 @@ demo(<span class="hljs-string">'predecessor 3 = 2'</span>, jsnum( predecessor(n3
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-65">&#182;</a>
               </div>
-              <p>Idiots, Bluebirds, and Kestrels — oh my! The essence of this formulation for <code>predecessor</code> is a machine of sorts which, if skipped, yields <code>K0 0 = 0</code>; if run once, produces <code>I K0 0 = 0</code>; and if run n times, produces <code>(n - 1) succ (I K0 0) = n - 1</code>. However, there are other versions of predecessor, including one that is far clearer than this. To get there, we are going to have to take a small detour into functional data structures.</p>
+              <p>Another fun fact – this is one step removed from <code>I</code>, called <code>I*</code> (“I-star”). In fact we could have shortened this to be <code>1 := I</code>. So 0 is false and 1 is identity, how nice!</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Pair: a Tiny Functional Data Structure'</span>)</pre></div></div>
+demo(<span class="hljs-string">'1 I tweet = tweet'</span>, ONCE(I)(tweet) === tweet)</pre></div></div>
             
         </li>
         
@@ -1253,9 +1055,16 @@ header(<span class="hljs-string">'Pair: a Tiny Functional Data Structure'</span>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-66">&#182;</a>
               </div>
-              <p>There are varying definitions for “data structure”. In this context we will use it to mean a way of organizing information, plus an interface for accessing that information (some might argue that this is closer to the definition of an Abstract Data Type). In the lambda calculus, we do not have objects, arrays, sets or what-have-you… only functions. But we’ve already seen functions capture values through <em>closure</em>, and be able to produce those values again later. That’s the essence of the K combinator, in fact.</p>
+              <p>Identity is a bit boring, however, because the n-fold composition of <code>I</code> is always <code>I</code>, even for n = 0. The above example doesn’t really prove our function is doing anything interesting. Let’s cheat a bit with some string ops (note, this is polluting LC with some JS, but it’s just for demonstration):</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">const</span> λ = <span class="hljs-string">'λ'</span>
+<span class="hljs-keyword">const</span> yell = <span class="hljs-function"><span class="hljs-params">str</span> =&gt;</span> str + <span class="hljs-string">'!'</span>
+
+demo(<span class="hljs-string">'0 yell λ = λ'</span>, ZERO(yell)(λ) === <span class="hljs-string">'λ'</span>)
+demo(<span class="hljs-string">'1 yell λ = yell λ = λ!'</span>, ONCE(yell)(λ) === <span class="hljs-string">'λ!'</span>)</pre></div></div>
             
         </li>
         
@@ -1266,15 +1075,15 @@ header(<span class="hljs-string">'Pair: a Tiny Functional Data Structure'</span>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-67">&#182;</a>
               </div>
-              <p>Here we define a more complex entity, the Church encoding “pair”. Smullyan named this combinator V for Vireo.</p>
+              <p>we could also hard-code <code>TWICE</code>.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Vireo := V := pair := λabf.fab'</span>)
-<span class="hljs-keyword">const</span> pair = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f(a)(b)
-<span class="hljs-keyword">const</span> V = pair
-<span class="hljs-keyword">const</span> Vireo = V</pre></div></div>
+header(<span class="hljs-string">'2 := λfx.f(fx)'</span>)
+<span class="hljs-keyword">const</span> TWICE = <span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> x =&gt; fn(fn(x))
+
+demo(<span class="hljs-string">'2 yell λ = yell (yell λ) = λ!!'</span>, TWICE(yell)(λ) === <span class="hljs-string">'λ!!'</span>)</pre></div></div>
             
         </li>
         
@@ -1285,15 +1094,9 @@ header(<span class="hljs-string">'Vireo := V := pair := λabf.fab'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-68">&#182;</a>
               </div>
-              <p><code>pair</code> takes two arbitrary values, a and b, and returns a function (“the pair”) closing over those values. When the pair is fed a final argument f, f is applied to a and b. So our pair can “provide” a and b, in that order, to any binary function.</p>
+              <h3 id="successor">Successor</h3>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">const</span> examplePair = pair(foo)(bar)
-
-demo(<span class="hljs-string">'(pair foo bar) T = foo'</span>, examplePair(T) === foo)
-demo(<span class="hljs-string">'(pair foo bar) F = bar'</span>, examplePair(F) === bar)</pre></div></div>
             
         </li>
         
@@ -1304,17 +1107,15 @@ demo(<span class="hljs-string">'(pair foo bar) F = bar'</span>, examplePair(F) =
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-69">&#182;</a>
               </div>
-              <p>As you can see, when a pair is fed the binary function T or F, it has the effect of extracting out one member of the pair. To make this more expressive and English-y, we can define fst (first) and snd (second) functions that perform this work for us:</p>
+              <p>This hard-coding works, but is very limiting. We can’t do true arithmetic like this, where operations on numbers generate other numbers. What we need is a way to count up.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'fst := λp.pT; snd = λp.pF'</span>)
-<span class="hljs-keyword">const</span> fst = <span class="hljs-function"><span class="hljs-params">somePair</span> =&gt;</span> somePair(T)
-<span class="hljs-keyword">const</span> snd = <span class="hljs-function"><span class="hljs-params">somePair</span> =&gt;</span> somePair(F)
+header(<span class="hljs-string">'SUCCESSOR'</span>)
 
-demo(<span class="hljs-string">'fst (pair foo bar) = foo'</span>, fst(examplePair) === foo)
-demo(<span class="hljs-string">'snd (pair foo bar) = bar'</span>, snd(examplePair) === bar)</pre></div></div>
+header(<span class="hljs-string">'SUCCESSOR := λnfx.f(nfx)'</span>)
+<span class="hljs-keyword">const</span> SUCCESSOR = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> fn =&gt; <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> fn(num(fn)(x))</pre></div></div>
             
         </li>
         
@@ -1325,16 +1126,18 @@ demo(<span class="hljs-string">'snd (pair foo bar) = bar'</span>, snd(examplePai
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-70">&#182;</a>
               </div>
-              <p>There isn’t any way to change the closed-over variables, but that’s a good thing – immutability means that we never accidentally mess up data someone else was relying on. We can generate new data instead.</p>
+              <p>Don’t get lost in the weeds. All we are saying is that the successor of <code>n</code> does <code>n</code> compositions of <code>f</code> to a value <code>x</code>, and then it does <em>one more</em> application of <code>f</code> to the result. Therefore, it ends up doing 1 + n compositions of <code>f</code> in total.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'setFst := λcp.pair c (snd p)'</span>)
-<span class="hljs-keyword">const</span> setFst = <span class="hljs-function"><span class="hljs-params">newFirst</span> =&gt;</span> oldP =&gt; pair(newFirst)(snd(oldP))
+<span class="hljs-keyword">const</span> newOnce   = SUCCESSOR(ZERO)
+<span class="hljs-keyword">const</span> newTwice  = SUCCESSOR(SUCCESSOR(ZERO)) <span class="hljs-comment">// we can use multiple successors on zero, or…</span>
+<span class="hljs-keyword">const</span> newThrice = SUCCESSOR(newTwice) <span class="hljs-comment">// …apply successor to already-obtained numbers.</span>
 
-demo(<span class="hljs-string">'fst (setFst bar (pair foo foo)) = bar'</span>, fst( setFst(bar)(pair(foo)(foo)) ) === bar)
-demo(<span class="hljs-string">'snd (setFst bar (pair foo foo)) = foo'</span>, snd( setFst(bar)(pair(foo)(foo)) ) === foo)</pre></div></div>
+demo(<span class="hljs-string">'1 yell λ = λ!'</span>,     newOnce(yell)(λ) === <span class="hljs-string">'λ!'</span>)
+demo(<span class="hljs-string">'2 yell λ = λ!!'</span>,   newTwice(yell)(λ) === <span class="hljs-string">'λ!!'</span>)
+demo(<span class="hljs-string">'3 yell λ = λ!!!'</span>, newThrice(yell)(λ) === <span class="hljs-string">'λ!!!'</span>)</pre></div></div>
             
         </li>
         
@@ -1345,16 +1148,9 @@ demo(<span class="hljs-string">'snd (setFst bar (pair foo foo)) = foo'</span>, s
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-71">&#182;</a>
               </div>
-              <p>It would help to have a shorthand for pairs. We will use <a, b> to stand in for <code>(pair a b)</code>.</p>
+              <h3 id="composition-and-point-free-notation">Composition and Point-Free Notation</h3>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'setSnd := λcp.pair (fst p) c'</span>)
-<span class="hljs-keyword">const</span> setSnd = <span class="hljs-function"><span class="hljs-params">newSecond</span> =&gt;</span> oldP =&gt; pair(fst(oldP))(newSecond)
-
-demo(<span class="hljs-string">'fst (setSnd bar &lt;foo, foo&gt;) = foo'</span>, fst( setSnd(bar)(pair(foo)(foo)) ) === foo)
-demo(<span class="hljs-string">'snd (setSnd bar &lt;foo, foo&gt;) = bar'</span>, snd( setSnd(bar)(pair(foo)(foo)) ) === bar)</pre></div></div>
             
         </li>
         
@@ -1365,26 +1161,9 @@ demo(<span class="hljs-string">'snd (setSnd bar &lt;foo, foo&gt;) = bar'</span>,
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-72">&#182;</a>
               </div>
-              <p>Back on track towards our cleaner <code>pred</code>, we will define a special pair function Φ (aka Phi) which moves the second element to the first, and increments the second element by 1. In shorthand, <code>Φ &lt;a, b&gt; = &lt;b, b + 1&gt;</code>. The use of this function will become apparent shortly.</p>
+              <p>There is another way to write successor. Point-free (some joke “point-less”) notation means to define a function purely as a combination of other functions, without explicitly writing final arguments. Sometimes this style reveals what a function <em>is</em> rather than what explain what it <em>does</em>. Other times it can be abused to produce incomprehensible gibberish. Successor is a reasonable candidate for it, however.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'Phi := Φ := λp.pair (snd p) (succ (snd p))'</span>)
-<span class="hljs-keyword">const</span> Φ = <span class="hljs-function"><span class="hljs-params">oldPair</span> =&gt;</span> pair(snd(oldPair))(succ(snd(oldPair)))
-<span class="hljs-keyword">const</span> Phi = Φ
-
-<span class="hljs-keyword">const</span> examplePairBar0 = pair(bar)(n0)
-<span class="hljs-keyword">const</span> examplePairFoo4 = pair(foo)(n4)
-
-demo(<span class="hljs-string">'Φ &lt;bar, 0&gt; = &lt;0, 1&gt;'</span>,
-  jsnum( fst(Φ(examplePairBar0)) ) === <span class="hljs-number">0</span> &amp;&amp;
-  jsnum( snd(Φ(examplePairBar0)) ) === <span class="hljs-number">1</span>
-)
-demo(<span class="hljs-string">'Φ &lt;foo, 4&gt; = &lt;4, 5&gt;'</span>,
-  jsnum( fst(Φ(examplePairFoo4)) ) === <span class="hljs-number">4</span> &amp;&amp;
-  jsnum( snd(Φ(examplePairFoo4)) ) === <span class="hljs-number">5</span>
-)</pre></div></div>
             
         </li>
         
@@ -1395,13 +1174,18 @@ demo(<span class="hljs-string">'Φ &lt;foo, 4&gt; = &lt;4, 5&gt;'</span>,
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-73">&#182;</a>
               </div>
-              <p>At long last, we can return to our predecessor function. With the help of Φ, it is wonderfully simple… well, relatively speaking at least.</p>
+              <p>We are doing n-fold compositions, so let’s define an actual <code>compose</code> function to help. Composition is often notated as <code>∘</code> in infix position: <code>(f ∘ g) x = f(g(x))</code>. However, Lambda Calculus only includes prefix position function application. Smullyan named this the Bluebird after Curry’s <code>B</code> combinator.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'pred := λn.fst (n Φ &lt;0, 0&gt;)'</span>)
-<span class="hljs-keyword">const</span> pred = <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> fst( n(Φ)(pair(n0)(n0)) )</pre></div></div>
+header(<span class="hljs-string">'Bluebird := B := (∘) := compose := λfgx.f(gx)'</span>)
+<span class="hljs-keyword">const</span> compose = <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> g =&gt; <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> f(g(x))
+<span class="hljs-keyword">const</span> B = compose
+<span class="hljs-keyword">const</span> Bluebird = B
+
+demo(<span class="hljs-string">'(B NOT NOT)  T =  NOT (NOT T)'</span>, (B(NOT)(NOT))(T)  === NOT(NOT(T)))
+demo(<span class="hljs-string">'(B yell NOT) F = yell (NOT F)'</span>, (B(yell)(NOT))(F) === yell(NOT(F)))</pre></div></div>
             
         </li>
         
@@ -1412,9 +1196,13 @@ header(<span class="hljs-string">'pred := λn.fst (n Φ &lt;0, 0&gt;)'</span>)
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-74">&#182;</a>
               </div>
-              <p>All we do is successive applications of Φ to a seed pair <0, 0>. After n applications, the pair is <n - 1, n>. Then we can pluck off the first value of the pair! In effect, we count up to n, but keep the predecessor around for easy reference.</p>
+              <p>Now that we have an actual composition function, we can define successor without mentioning the final <code>x</code> value argument.</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'SUCC := λnf.f∘(nf) = λnf.Bf(nf)'</span>)
+<span class="hljs-keyword">const</span> SUCC = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> fn =&gt; compose( fn )( num(fn) )</pre></div></div>
             
         </li>
         
@@ -1424,6 +1212,689 @@ header(<span class="hljs-string">'pred := λn.fst (n Φ &lt;0, 0&gt;)'</span>)
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-75">&#182;</a>
+              </div>
+              <p>This is just a terse way of repeating what we already know: if a given <code>n</code> composes some function <code>f</code> n times, then the successor of n is a function which composes one additional <code>f</code>, for a total of 1 + n compositions.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">const</span> n0 = ZERO
+<span class="hljs-keyword">const</span> n1 = SUCC(n0)
+<span class="hljs-keyword">const</span> n2 = SUCC(SUCC(n0))
+<span class="hljs-keyword">const</span> n3 = SUCC(SUCC(SUCC(n0)))
+<span class="hljs-keyword">const</span> n4 = SUCC(n3)
+
+demo(<span class="hljs-string">'1 yell λ = λ!'</span>,    n1(yell)(λ) === <span class="hljs-string">'λ!'</span>)
+demo(<span class="hljs-string">'2 yell λ = λ!!'</span>,   n2(yell)(λ) === <span class="hljs-string">'λ!!'</span>)
+demo(<span class="hljs-string">'3 yell λ = λ!!!'</span>,  n3(yell)(λ) === <span class="hljs-string">'λ!!!'</span>)
+demo(<span class="hljs-string">'4 yell λ = λ!!!!'</span>, n4(yell)(λ) === <span class="hljs-string">'λ!!!!'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-76">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-76">&#182;</a>
+              </div>
+              <h3 id="arithemtic">Arithemtic</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-77">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-77">&#182;</a>
+              </div>
+              <h4 id="addition">Addition</h4>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-78">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-78">&#182;</a>
+              </div>
+              <p>Things will get pretty slow if we can only increment by 1. Let’s add addition.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'ADD := λab.a(succ)b'</span>)
+<span class="hljs-keyword">const</span> ADD = <span class="hljs-function"><span class="hljs-params">numA</span> =&gt;</span> numB =&gt; numA(SUCC)(numB)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-79">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-79">&#182;</a>
+              </div>
+              <p>Aha, addition is just the Ath successor of B. Makes sense. For example, <code>ADD 3 2 = 3 SUCC 2</code>, which could be read as “thrice successor of twice”.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">const</span> n5 = ADD(n2)(n3)
+<span class="hljs-keyword">const</span> n6 = ADD(n3)(n3)
+
+demo(<span class="hljs-string">'ADD 5 2 yell λ = λ!!!!!!!'</span>, ADD(n5)(n2)(yell)(λ) === <span class="hljs-string">'λ!!!!!!!'</span>)
+demo(<span class="hljs-string">'ADD 0 3 yell λ = λ!!!'</span>,     ADD(n0)(n3)(yell)(λ) === <span class="hljs-string">'λ!!!'</span>)
+demo(<span class="hljs-string">'ADD 2 2 = 4'</span>,               ADD(n2)(n2)(yell)(λ) === n4(yell)(λ))</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-80">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-80">&#182;</a>
+              </div>
+              <p>These equivalence checks using <code>yell</code> and <code>&#39;λ&#39;</code> are a bit verbose. It’s annoying, but a mathematical truth, that there can be no general algorithm to decide if two functions are equivalent – and we cannot rely on JS function equality because we are generating independent function objects. Since <code>yell</code> and <code>&#39;λ&#39;</code> are already impure non-LC code, we might as well go all the way and define <code>church</code> and <code>jsnum</code> to convert between Church encodings and JS numbers.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'LC &lt;-&gt; JS: church &amp; jsnum'</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">church</span> (<span class="hljs-params">n</span>) </span>{ <span class="hljs-keyword">return</span> n === <span class="hljs-number">0</span> ? n0 : SUCC(church(n - <span class="hljs-number">1</span>)) }
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsnum</span> (<span class="hljs-params">c</span>) </span>{ <span class="hljs-keyword">return</span> c(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x + <span class="hljs-number">1</span>)(<span class="hljs-number">0</span>) }
+
+demo(        <span class="hljs-string">'church(5) = n5'</span>, church(<span class="hljs-number">5</span>)(yell)(λ) === n5(yell)(λ))
+demo(       <span class="hljs-string">'jsnum(n5) === 5'</span>,          jsnum(n5) === <span class="hljs-number">5</span>)
+demo(<span class="hljs-string">'jsnum(church(2)) === 2'</span>,   jsnum(church(<span class="hljs-number">2</span>)) === <span class="hljs-number">2</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-81">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-81">&#182;</a>
+              </div>
+              <h4 id="multiplication">Multiplication</h4>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-82">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-82">&#182;</a>
+              </div>
+              <p>Back to math. How about multiplication?</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'MULT := λab.a∘b = compose'</span>)
+<span class="hljs-keyword">const</span> MULT = compose</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-83">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-83">&#182;</a>
+              </div>
+              <p>How beautiful! Multiplication is the composition of numbers. For example, <code>MULT 3 2 = 3 ∘ 2</code>, which could be read as “thrice of twice”, or “three of (two of (someFn))”. If you compose a function <code>f</code> two times — <code>f ∘ f</code> — and then you compose that result three times — <code>(f∘f) ∘ (f∘f) ∘ (f∘f)</code> — you get the six-fold composition of f: <code>f ∘ f ∘ f ∘ f ∘ f ∘ f</code>. It helps to know that composition is associative — <code>f ∘ (g ∘ h) = (f ∘ g) ∘ h</code>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+demo(<span class="hljs-string">'MULT 1 5 = 5'</span>, jsnum( MULT(n1)(n5) ) === <span class="hljs-number">5</span>)
+demo(<span class="hljs-string">'MULT 3 2 = 6'</span>, jsnum( MULT(n3)(n2) ) === <span class="hljs-number">6</span>)
+demo(<span class="hljs-string">'MULT 4 0 = 0'</span>, jsnum( MULT(n4)(n0) ) === <span class="hljs-number">0</span>)
+demo(<span class="hljs-string">'MULT 6 2 yell λ = λ!!!!!!!!!!!!'</span>, MULT(n6)(n2)(yell)(λ) === <span class="hljs-string">'λ!!!!!!!!!!!!'</span>)
+
+<span class="hljs-keyword">const</span> n8 = MULT(n4)(n2)
+<span class="hljs-keyword">const</span> n9 = SUCC(n8)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-84">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-84">&#182;</a>
+              </div>
+              <h4 id="exponentiation">Exponentiation</h4>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-85">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-85">&#182;</a>
+              </div>
+              <p>Exponentiation is remarkably clean too. When we say 2^3, we are saying “multiply two by itself three times”; or putting it another way, “twice of twice of twice”. So for any base and power, the result is the power-fold composition of the base:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'Thrush := POW := λab.ba'</span>)
+<span class="hljs-keyword">const</span> POW = <span class="hljs-function"><span class="hljs-params">numA</span> =&gt;</span> numB =&gt; numB(numA)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-86">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-86">&#182;</a>
+              </div>
+              <p>As you can see, we also call this combinator the Thrush. Unfortunately we have a name collision as we already defined <code>T</code> as the church encoding of true, so we omit the single-letter version of this combinator. There is another letter sometimes reserved for true, in which case we can use <code>T</code> for Thrush; the alternate true combinator name is coming up soon.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+demo(<span class="hljs-string">'POW 2 3 = 8'</span>, jsnum( POW(n2)(n3) ) === <span class="hljs-number">8</span>)
+demo(<span class="hljs-string">'POW 3 2 = 9'</span>, jsnum( POW(n3)(n2) ) === <span class="hljs-number">9</span>)
+demo(<span class="hljs-string">'POW 6 1 = 6'</span>, jsnum( POW(n6)(n1) ) === <span class="hljs-number">6</span>)
+demo(<span class="hljs-string">'POW 5 0 = 1'</span>, jsnum( POW(n5)(n0) ) === <span class="hljs-number">1</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-87">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-87">&#182;</a>
+              </div>
+              <h3 id="num-bool">Num -&gt; Bool</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-88">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-88">&#182;</a>
+              </div>
+              <p>As stated earlier, there is no general function-equivalence algorithm (this lies at the heart of Church’s research efforts into “decidability”). But just as we did for booleans, we can develop a specific equality check for numbers.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-89">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-89">&#182;</a>
+              </div>
+              <h4 id="zero-equality">Zero Equality</h4>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-90">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-90">&#182;</a>
+              </div>
+              <p>We start with zero. If our input is zero, we want to produce <code>T</code>. Otherwise, we want to produce <code>F</code>. In our function below, if the input is zero, we run the inner function zero times, which means we return the final argument (<code>T</code>). However, if the input is any number greater than zero, we run the inner function at least once; that inner function is designed to always produce <code>F</code>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'ISZERO := λn.n(λ_.F)T'</span>)
+<span class="hljs-keyword">const</span> ISZERO = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num(<span class="hljs-function"><span class="hljs-params">_</span> =&gt;</span> F)(T)
+
+demo(<span class="hljs-string">'ISZERO 0 = T'</span>, ISZERO(n0) === T)
+demo(<span class="hljs-string">'ISZERO 1 = F'</span>, ISZERO(n1) === F)
+demo(<span class="hljs-string">'ISZERO 2 = F'</span>, ISZERO(n2) === F)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-91">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-91">&#182;</a>
+              </div>
+              <h4 id="the-kestrel">The Kestrel</h4>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-92">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-92">&#182;</a>
+              </div>
+              <p>ISZERO used a nice trick to produce a constant. We’ll abstract that out. This is the Kestrel combinator <code>K</code>, named for the German word “Konstante”. The <code>K</code> combinator takes a value, and produces a function which ignores its input, always returning the original value. So, <code>K0</code> is a function that always returns 0; (<code>K tweet</code>) is a function which always returns tweet.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'Kestrel combinator and IS0'</span>)
+
+header(<span class="hljs-string">'Kestrel := K := konst := λk_.k'</span>)
+<span class="hljs-keyword">const</span> konst = <span class="hljs-function"><span class="hljs-params">k</span> =&gt;</span> _ =&gt; k
+<span class="hljs-keyword">const</span> K = konst
+<span class="hljs-keyword">const</span> Kestrel = K
+
+demo(<span class="hljs-string">'K0 tweet = 0'</span>, K(n0)(tweet) === n0)
+demo(<span class="hljs-string">'K0 chirp = 0'</span>, K(n0)(chirp) === n0)
+demo(<span class="hljs-string">'K tweet chirp = tweet'</span>, K(tweet)(chirp) === tweet)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-93">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-93">&#182;</a>
+              </div>
+              <p>With K, we can redefine our isZero function more concisely.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'IS0 := λn.n(KF)T'</span>)
+<span class="hljs-keyword">const</span> IS0 = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num(K(F))(T)
+
+demo(<span class="hljs-string">'IS0 0 = T'</span>, IS0(n0) === T)
+demo(<span class="hljs-string">'IS0 1 = F'</span>, IS0(n1) === F)
+demo(<span class="hljs-string">'IS0 2 = F'</span>, IS0(n2) === F)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-94">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-94">&#182;</a>
+              </div>
+              <p><code>K</code> should look familiar; it’s “alpha-equivalent” to <code>T</code>. Alpha-equivalence means it is identical except for variable names, which are arbitrary and don’t affect the behavior: <code>λk_.k = λab.a</code>.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-95">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-95">&#182;</a>
+              </div>
+              <h4 id="the-kite">The Kite</h4>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-96">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-96">&#182;</a>
+              </div>
+              <p>We can also make <code>F</code> out of <code>K</code> and <code>I</code>. Try tracing through the logic and confirming that <code>KI = F</code>. This result is known as the Kite.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'         K = T'</span>)
+header(<span class="hljs-string">'Kite := KI = F'</span>)
+<span class="hljs-keyword">const</span> Tru = K
+<span class="hljs-keyword">const</span> Fls = K(I)
+<span class="hljs-keyword">const</span> Kite = Fls
+
+demo(<span class="hljs-string">'K  tweet chirp = tweet'</span>, Tru(tweet)(chirp) === tweet)
+demo(<span class="hljs-string">'KI tweet chirp = chirp'</span>, Fls(tweet)(chirp) === chirp)
+demo(<span class="hljs-string">'De Morgan using K and KI'</span>, deMorgansLawDemo(K, K(I)))</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-97">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-97">&#182;</a>
+              </div>
+              <h3 id="interlude-predecessor-so-far-">Interlude: Predecessor (So Far)</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-98">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-98">&#182;</a>
+              </div>
+              <p>We’re still a way off from numeric equality. To get it working we’ll need <code>succ</code>‘s opposite, <code>pred</code> (predecessor). For a given num, <code>pred</code> gives you the number that came before, unless we’re at 0, in which case it just gives you 0. It is possible to define predecessor using only the tools we’ve built thus far, but it’s quite difficult to comprehend. Glance at it, but we’ll be seeing a better version soon:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'PREDECESSOR := λn.n (λg.IS0 (g 1) I (B SUCC g)) (K0) 0'</span>)
+<span class="hljs-keyword">const</span> PREDECESSOR = <span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num(<span class="hljs-function"><span class="hljs-params">g</span> =&gt;</span> IS0(g(n1))(I)(B(SUCC)(g)))(K(n0))(n0)
+
+demo(<span class="hljs-string">'PREDECESSOR 0 = 0'</span>, jsnum( PREDECESSOR(n0) ) === <span class="hljs-number">0</span>)
+demo(<span class="hljs-string">'PREDECESSOR 1 = 0'</span>, jsnum( PREDECESSOR(n1) ) === <span class="hljs-number">0</span>)
+demo(<span class="hljs-string">'PREDECESSOR 2 = 1'</span>, jsnum( PREDECESSOR(n2) ) === <span class="hljs-number">1</span>)
+demo(<span class="hljs-string">'PREDECESSOR 3 = 2'</span>, jsnum( PREDECESSOR(n3) ) === <span class="hljs-number">2</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-99">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-99">&#182;</a>
+              </div>
+              <p>Idiots, Bluebirds, and Kestrels — oh my! The essence of this formulation for <code>PREDECESSOR</code> is a machine of sorts which, if skipped, yields <code>K0 0 = 0</code>; if run once, produces <code>I K0 0 = 0</code>; and if run n times, produces <code>(n - 1) succ (I K0 0) = n - 1</code>. However, there are other versions of predecessor, including one that is far clearer than this. To get there, we are going to have to take a small detour into functional data structures.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-100">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-100">&#182;</a>
+              </div>
+              <h2 id="functional-data-structures-pair">Functional Data Structures: Pair</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'Pair: a Tiny Functional Data Structure'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-101">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-101">&#182;</a>
+              </div>
+              <p>There are varying definitions for “data structure”. In this context we will use it to mean a way of organizing information, plus an interface for accessing that information (some might argue that this is closer to the definition of an Abstract Data Type). In the lambda calculus, we do not have objects, arrays, sets or what-have-you… only functions. But we’ve already seen that functions capture values through <em>closure</em>, and are able to produce those values again later. That’s the essence of the K combinator, in fact.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-102">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-102">&#182;</a>
+              </div>
+              <p>Here we define a more complex entity, the Church encoding for “pair”. Smullyan named this combinator the Vireo.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'Vireo := V := PAIR := λabf.fab'</span>)
+<span class="hljs-keyword">const</span> PAIR = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; <span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f(a)(b)
+<span class="hljs-keyword">const</span> V = PAIR
+<span class="hljs-keyword">const</span> Vireo = V</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-103">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-103">&#182;</a>
+              </div>
+              <p><code>PAIR</code> takes two arbitrary values, a and b, and returns a function (“the pair”) closing over those values. When the pair is fed a final argument f, f is applied to a and b. So our pair can “provide” a and b, in that order, to any binary function.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">const</span> examplePair = PAIR(tweet)(chirp)
+
+demo(<span class="hljs-string">'(PAIR tweet chirp) T = tweet'</span>, examplePair(T) === tweet)
+demo(<span class="hljs-string">'(PAIR tweet chirp) F = chirp'</span>, examplePair(F) === chirp)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-104">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-104">&#182;</a>
+              </div>
+              <h3 id="opening-the-closure">Opening the Closure</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-105">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-105">&#182;</a>
+              </div>
+              <p>As you can see, when a pair is fed the binary function <code>T</code> or <code>F</code>, it has the effect of extracting out one member of the pair. To make this more expressive and English-y, we can define FST (first) and SND (second) functions that perform this work for us:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'FST := λp.pT; SND = λp.pF'</span>)
+<span class="hljs-keyword">const</span> FST = <span class="hljs-function"><span class="hljs-params">somePair</span> =&gt;</span> somePair(T)
+<span class="hljs-keyword">const</span> SND = <span class="hljs-function"><span class="hljs-params">somePair</span> =&gt;</span> somePair(F)
+
+demo(<span class="hljs-string">'FST (PAIR tweet chirp) = tweet'</span>, FST(examplePair) === tweet)
+demo(<span class="hljs-string">'SND (PAIR tweet chirp) = chirp'</span>, SND(examplePair) === chirp)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-106">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-106">&#182;</a>
+              </div>
+              <h3 id="immutability">Immutability</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-107">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-107">&#182;</a>
+              </div>
+              <p>There isn’t any way to change the closed-over variables, but that’s a good thing – immutability means that we never accidentally mess up data someone else was relying on. We can generate new data instead.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'SET_FST := λcp.PAIR c (SND p)'</span>)
+<span class="hljs-keyword">const</span> SET_FST = <span class="hljs-function"><span class="hljs-params">newFirst</span> =&gt;</span> oldP =&gt; PAIR(newFirst)(SND(oldP))
+
+demo(<span class="hljs-string">'FST (SET_FST chirp (PAIR tweet tweet)) = chirp'</span>, FST( SET_FST(chirp)(PAIR(tweet)(tweet)) ) === chirp)
+demo(<span class="hljs-string">'SND (SET_FST chirp (PAIR tweet tweet)) = tweet'</span>, SND( SET_FST(chirp)(PAIR(tweet)(tweet)) ) === tweet)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-108">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-108">&#182;</a>
+              </div>
+              <p>It would help to have a shorthand for pairs. We will use <a, b> to stand in for <code>(pair a b)</code>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'SET_SND := λcp.PAIR (FST p) c'</span>)
+<span class="hljs-keyword">const</span> SET_SND = <span class="hljs-function"><span class="hljs-params">newSecond</span> =&gt;</span> oldP =&gt; PAIR(FST(oldP))(newSecond)
+
+demo(<span class="hljs-string">'FST (SET_SND chirp &lt;tweet, tweet&gt;) = tweet'</span>, FST( SET_SND(chirp)(PAIR(tweet)(tweet)) ) === tweet)
+demo(<span class="hljs-string">'SND (SET_SND chirp &lt;tweet, tweet&gt;) = chirp'</span>, SND( SET_SND(chirp)(PAIR(tweet)(tweet)) ) === chirp)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-109">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-109">&#182;</a>
+              </div>
+              <h3 id="counting-up-with-memory">Counting Up with Memory</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-110">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-110">&#182;</a>
+              </div>
+              <p>Back on track towards our cleaner <code>PRED</code>, we will define a special pair function Φ (aka PHI) which moves the second element to the first, and increments the second element by 1. In shorthand, <code>Φ &lt;a, b&gt; = &lt;b, b + 1&gt;</code>. The use of this function will become apparent shortly.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'PHI := Φ := λp.PAIR (SND p) (SUCC (SND p))'</span>)
+<span class="hljs-keyword">const</span> Φ = <span class="hljs-function"><span class="hljs-params">oldPair</span> =&gt;</span> PAIR(SND(oldPair))(SUCC(SND(oldPair)))
+<span class="hljs-keyword">const</span> PHI = Φ
+
+<span class="hljs-keyword">const</span> examplePairChirp0 = PAIR(chirp)(n0)
+<span class="hljs-keyword">const</span> examplePairTweet4 = PAIR(tweet)(n4)
+
+demo(<span class="hljs-string">'Φ &lt;chirp, 0&gt; = &lt;0, 1&gt;'</span>,
+  jsnum( FST(Φ(examplePairChirp0)) ) === <span class="hljs-number">0</span> &amp;&amp;
+  jsnum( SND(Φ(examplePairChirp0)) ) === <span class="hljs-number">1</span>
+)
+demo(<span class="hljs-string">'Φ &lt;tweet, 4&gt; = &lt;4, 5&gt;'</span>,
+  jsnum( FST(Φ(examplePairTweet4)) ) === <span class="hljs-number">4</span> &amp;&amp;
+  jsnum( SND(Φ(examplePairTweet4)) ) === <span class="hljs-number">5</span>
+)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-111">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-111">&#182;</a>
+              </div>
+              <h2 id="back-to-arithmetic">Back to Arithmetic</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-112">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-112">&#182;</a>
+              </div>
+              <h3 id="a-cleaner-predecessor">A Cleaner Predecessor</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-113">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-113">&#182;</a>
+              </div>
+              <p>At long last, we can return to our predecessor function. With the help of Φ, it is wonderfully simple… well, relatively speaking at least.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+header(<span class="hljs-string">'PRED := λn.FST (n Φ &lt;0, 0&gt;)'</span>)
+<span class="hljs-keyword">const</span> PRED = <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> FST( n(Φ)(PAIR(n0)(n0)) )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-114">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-114">&#182;</a>
+              </div>
+              <p>All we do is successive applications of Φ to a seed pair <0, 0>. After n applications, the pair is <n - 1, n>. Then we can pluck off the first value of the pair! In effect, we count up to n, but keep the predecessor around for easy reference.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-115">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-115">&#182;</a>
               </div>
               <table>
 <thead>
@@ -1460,113 +1931,127 @@ header(<span class="hljs-string">'pred := λn.fst (n Φ &lt;0, 0&gt;)'</span>)
             </div>
             
             <div class="content"><div class='highlight'><pre>
-demo(<span class="hljs-string">'pred 0 = 0'</span>, jsnum( pred(n0) ) === <span class="hljs-number">0</span>)
-demo(<span class="hljs-string">'pred 1 = 0'</span>, jsnum( pred(n1) ) === <span class="hljs-number">0</span>)
-demo(<span class="hljs-string">'pred 2 = 1'</span>, jsnum( pred(n2) ) === <span class="hljs-number">1</span>)
-demo(<span class="hljs-string">'pred 3 = 2'</span>, jsnum( pred(n3) ) === <span class="hljs-number">2</span>)</pre></div></div>
+demo(<span class="hljs-string">'PRED 0 = 0'</span>, jsnum( PRED(n0) ) === <span class="hljs-number">0</span>)
+demo(<span class="hljs-string">'PRED 1 = 0'</span>, jsnum( PRED(n1) ) === <span class="hljs-number">0</span>)
+demo(<span class="hljs-string">'PRED 2 = 1'</span>, jsnum( PRED(n2) ) === <span class="hljs-number">1</span>)
+demo(<span class="hljs-string">'PRED 3 = 2'</span>, jsnum( PRED(n3) ) === <span class="hljs-number">2</span>)</pre></div></div>
             
         </li>
         
         
-        <li id="section-76">
+        <li id="section-116">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-76">&#182;</a>
+                <a class="pilcrow" href="#section-116">&#182;</a>
               </div>
-              <hr>
+              <h3 id="subtraction-at-last">Subtraction At Last</h3>
 
             </div>
             
         </li>
         
         
-        <li id="section-77">
+        <li id="section-117">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-77">&#182;</a>
-              </div>
-              
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-78">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-78">&#182;</a>
+                <a class="pilcrow" href="#section-117">&#182;</a>
               </div>
               <p>Now that the epic <code>pred</code> exists, we can do subtraction… at least, down to 0.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'sub := λab.b pred a'</span>)
-<span class="hljs-keyword">const</span> sub = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; b(pred)(a)
+header(<span class="hljs-string">'SUB := λab.b PRED a'</span>)
+<span class="hljs-keyword">const</span> SUB = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; b(PRED)(a)
 
-<span class="hljs-keyword">const</span> n7 = add(n4)(n3)
+<span class="hljs-keyword">const</span> n7 = ADD(n4)(n3)
 
-demo(<span class="hljs-string">'sub 5 2 = 3'</span>, jsnum( sub(n5)(n2) ) === <span class="hljs-number">3</span>)
-demo(<span class="hljs-string">'sub 4 0 = 4'</span>, jsnum( sub(n4)(n0) ) === <span class="hljs-number">4</span>)
-demo(<span class="hljs-string">'sub 2 2 = 0'</span>, jsnum( sub(n2)(n7) ) === <span class="hljs-number">0</span>)
-demo(<span class="hljs-string">'sub 2 7 = 0'</span>, jsnum( sub(n2)(n7) ) === <span class="hljs-number">0</span>)</pre></div></div>
+demo(<span class="hljs-string">'SUB 5 2 = 3'</span>, jsnum( SUB(n5)(n2) ) === <span class="hljs-number">3</span>)
+demo(<span class="hljs-string">'SUB 4 0 = 4'</span>, jsnum( SUB(n4)(n0) ) === <span class="hljs-number">4</span>)
+demo(<span class="hljs-string">'SUB 2 2 = 0'</span>, jsnum( SUB(n2)(n7) ) === <span class="hljs-number">0</span>)
+demo(<span class="hljs-string">'SUB 2 7 = 0'</span>, jsnum( SUB(n2)(n7) ) === <span class="hljs-number">0</span>)</pre></div></div>
             
         </li>
         
         
-        <li id="section-79">
+        <li id="section-118">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-79">&#182;</a>
+                <a class="pilcrow" href="#section-118">&#182;</a>
+              </div>
+              <h3 id="number-comparisons">Number Comparisons</h3>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-119">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-119">&#182;</a>
               </div>
               <p>This kind of limited subtraction enables less-than-or-equal-to.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'leq := λab.is0(sub a b)'</span>)
-<span class="hljs-keyword">const</span> leq = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; is0(sub(a)(b))
+header(<span class="hljs-string">'LEQ := λab.IS0(SUB a b)'</span>)
+<span class="hljs-keyword">const</span> LEQ = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; IS0(SUB(a)(b))
 
-demo(<span class="hljs-string">'leq 3 2 = F'</span>, leq(n3)(n2) === F)
-demo(<span class="hljs-string">'leq 3 3 = T'</span>, leq(n3)(n3) === T)
-demo(<span class="hljs-string">'leq 3 4 = T'</span>, leq(n3)(n4) === T)</pre></div></div>
+demo(<span class="hljs-string">'LEQ 3 2 = F'</span>, LEQ(n3)(n2) === F)
+demo(<span class="hljs-string">'LEQ 3 3 = T'</span>, LEQ(n3)(n3) === T)
+demo(<span class="hljs-string">'LEQ 3 4 = T'</span>, LEQ(n3)(n4) === T)</pre></div></div>
             
         </li>
         
         
-        <li id="section-80">
+        <li id="section-120">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-80">&#182;</a>
+                <a class="pilcrow" href="#section-120">&#182;</a>
               </div>
               <p>Finally we can test for numeric equality. 🎉🎉🎉</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'eq := λab.and (leq a b) (leq b a)'</span>)
-<span class="hljs-keyword">const</span> eq = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; and (leq(a)(b)) (leq(b)(a))
+header(<span class="hljs-string">'eq := λab.AND (LEQ a b) (LEQ b a)'</span>)
+<span class="hljs-keyword">const</span> EQ = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; AND (LEQ(a)(b)) (LEQ(b)(a))
 
-demo(<span class="hljs-string">'eq 4 6 = F'</span>, eq(n4)(n5) === F)
-demo(<span class="hljs-string">'eq 7 3 = F'</span>, eq(n7)(n3) === F)
-demo(<span class="hljs-string">'eq 5 5 = T'</span>, eq(n5)(n5) === T)
-demo(<span class="hljs-string">'eq (add 3 6) (pow 3 2) = T'</span>, eq(add(n3)(n6))(pow(n3)(n2)) === T)</pre></div></div>
+demo(<span class="hljs-string">'EQ 4 6 = F'</span>, EQ(n4)(n5) === F)
+demo(<span class="hljs-string">'EQ 7 3 = F'</span>, EQ(n7)(n3) === F)
+demo(<span class="hljs-string">'EQ 5 5 = T'</span>, EQ(n5)(n5) === T)
+demo(<span class="hljs-string">'EQ (ADD 3 6) (POW 3 2) = T'</span>, EQ(ADD(n3)(n6))(POW(n3)(n2)) === T)</pre></div></div>
             
         </li>
         
         
-        <li id="section-81">
+        <li id="section-121">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-81">&#182;</a>
+                <a class="pilcrow" href="#section-121">&#182;</a>
               </div>
-              <p>Of course we can use composition to create other results. At first glance, it would seem like greater-than can be the composition of not and leq. But this doesn’t work because leq is a two-arg function, and compose only works with unary functions. Thanks to the beautiful Blackbird combinator, however, we can create point-free compositions where the rightmost function is binary.</p>
+              <h2 id="more-composition">More Composition</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-122">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-122">&#182;</a>
+              </div>
+              <p>Of course we can use composition to create other results. At first glance, it would seem like greater-than can be the composition of <code>NOT</code> and <code>LEQ</code>. But this doesn’t work because <code>LEQ</code> is a two-arg function, and compose only works with unary functions. Thanks to the beautiful Blackbird combinator, however, we can create point-free compositions where the rightmost function is binary.</p>
 
             </div>
             
@@ -1578,32 +2063,32 @@ header(<span class="hljs-string">'Blackbird := B′ := BBB'</span>)
         </li>
         
         
-        <li id="section-82">
+        <li id="section-123">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-82">&#182;</a>
+                <a class="pilcrow" href="#section-123">&#182;</a>
               </div>
               <p>If you find B1 confusing, the point-ful version might help: <code>B1 := λfgxy.f(g x y)</code>. Also, why Smullyan chose “B1” instead of “B2”, I can only guess.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'gt := B1 not leq'</span>)
-<span class="hljs-keyword">const</span> gt = B1(not)(leq)
+header(<span class="hljs-string">'GT := B1 NOT LEQ'</span>)
+<span class="hljs-keyword">const</span> GT = B1(NOT)(LEQ)
 
-demo(<span class="hljs-string">'gt 6 2 = T'</span>, gt(n6)(n2) === T)
-demo(<span class="hljs-string">'gt 4 4 = F'</span>, gt(n4)(n4) === F)
-demo(<span class="hljs-string">'gt 4 5 = F'</span>, gt(n4)(n5) === F)</pre></div></div>
+demo(<span class="hljs-string">'GT 6 2 = T'</span>, GT(n6)(n2) === T)
+demo(<span class="hljs-string">'GT 4 4 = F'</span>, GT(n4)(n4) === F)
+demo(<span class="hljs-string">'GT 4 5 = F'</span>, GT(n4)(n5) === F)</pre></div></div>
             
         </li>
         
         
-        <li id="section-83">
+        <li id="section-124">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-83">&#182;</a>
+                <a class="pilcrow" href="#section-124">&#182;</a>
               </div>
               <p>Another use of Blackbird: <code>neq := B1 not eq</code>.</p>
 
@@ -1612,27 +2097,40 @@ demo(<span class="hljs-string">'gt 4 5 = F'</span>, gt(n4)(n5) === F)</pre></div
         </li>
         
         
-        <li id="section-84">
+        <li id="section-125">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-84">&#182;</a>
+                <a class="pilcrow" href="#section-125">&#182;</a>
+              </div>
+              <h2 id="final-notes">Final Notes</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-126">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-126">&#182;</a>
               </div>
               <p>There are church encodings and lambda techniques for lists, types, rationals, reals, and anything else that is computable – plus the astonishing Y-combinator, which enables recursion in a syntax where functions are all anonymous. We also omitted the Starling, which can be combined with the Kestrel in various ways to produce <em>every other function.</em> For now, we will end with an actual real-world classic math problem, calculated entirely using lambda calculus – only converted back to JS numbers at the end, purely for display purposes.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-header(<span class="hljs-string">'fib := λn.n (λfab.f b (add a b)) K 0 1'</span>)
-<span class="hljs-keyword">const</span> fib = <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n(<span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">b</span> =&gt;</span> f(b)(add(a)(b)))(K)(n0)(n1)
+header(<span class="hljs-string">'FIB := λn.n (λfab.f b (ADD a b)) K 0 1'</span>)
+<span class="hljs-keyword">const</span> FIB = <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n(<span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">b</span> =&gt;</span> f(b)(ADD(a)(b)))(K)(n0)(n1)
 
-demo(<span class="hljs-string">'fib 0 = 0'</span>, jsnum( fib(n0) ) === <span class="hljs-number">0</span>)
-demo(<span class="hljs-string">'fib 1 = 1'</span>, jsnum( fib(n1) ) === <span class="hljs-number">1</span>)
-demo(<span class="hljs-string">'fib 2 = 1'</span>, jsnum( fib(n2) ) === <span class="hljs-number">1</span>)
-demo(<span class="hljs-string">'fib 3 = 2'</span>, jsnum( fib(n3) ) === <span class="hljs-number">2</span>)
-demo(<span class="hljs-string">'fib 4 = 3'</span>, jsnum( fib(n4) ) === <span class="hljs-number">3</span>)
-demo(<span class="hljs-string">'fib 5 = 5'</span>, jsnum( fib(n5) ) === <span class="hljs-number">5</span>)
-demo(<span class="hljs-string">'fib 6 = 8'</span>, jsnum( fib(n6) ) === <span class="hljs-number">8</span>)
+demo(<span class="hljs-string">'FIB 0 = 0'</span>, jsnum( FIB(n0) ) === <span class="hljs-number">0</span>)
+demo(<span class="hljs-string">'FIB 1 = 1'</span>, jsnum( FIB(n1) ) === <span class="hljs-number">1</span>)
+demo(<span class="hljs-string">'FIB 2 = 1'</span>, jsnum( FIB(n2) ) === <span class="hljs-number">1</span>)
+demo(<span class="hljs-string">'FIB 3 = 2'</span>, jsnum( FIB(n3) ) === <span class="hljs-number">2</span>)
+demo(<span class="hljs-string">'FIB 4 = 3'</span>, jsnum( FIB(n4) ) === <span class="hljs-number">3</span>)
+demo(<span class="hljs-string">'FIB 5 = 5'</span>, jsnum( FIB(n5) ) === <span class="hljs-number">5</span>)
+demo(<span class="hljs-string">'FIB 6 = 8'</span>, jsnum( FIB(n6) ) === <span class="hljs-number">8</span>)
 
 logErrsAndSetExitCode()</pre></div></div>
             
