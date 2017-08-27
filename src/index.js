@@ -2,7 +2,7 @@
 
 // ### Combinators, Lambda Calculus, and Church Encodings in JavaScript
 
-// #### Notes for a talk by Gabriel Lebec
+// #### Notes for [a talk by Gabriel Lebec (click for videos and slides)](https://github.com/glebec/lambda-talk)
 
 const chalk = require('chalk')
 const green = chalk.green.bind(chalk)
