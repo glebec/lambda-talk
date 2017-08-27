@@ -10,11 +10,9 @@ Visit [https://glebec.github.io/lambda-talk](https://glebec.github.io/lambda-tal
 
 The runnable JS file is in [`src/index.js`](src/index.js). Execute the file is by cloning this repo and running `npm start`. Or, view the REPL [here](https://repl.it/Jgu4/235).
 
-Slides will be uploaded to Slideshare… just as soon as LinkedIn stops trying to erroneously block the upload.
+## Presentation
 
-## Videos
-
-This repo was created as an accompaniment to a lecture talk given at Fullstack Academy of Code on 2017-08-24. You can view that talk (in two parts) below:
+This repo was created as an accompaniment to a lecture talk given at Fullstack Academy of Code on 2017-08-24. You can view videos of that talk (in two parts) below:
 
 ### Part I
 
@@ -23,6 +21,12 @@ This repo was created as an accompaniment to a lecture talk given at Fullstack A
 ### Part II
 
 [![Lambda as JS, or A Flock of Functions: Part I](https://img.youtube.com/vi/pAnLQ9jwN-E/0.jpg)](https://www.youtube.com/watch?v=pAnLQ9jwN-E&list=PLpkHU923F2XFWv-XfVuvWuxq41h21nOPK&index=2)
+
+### Slides
+
+[Click to view the slide deck.](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript)
+
+[![Lambda as JS - Presentation Cover Image](assets/lambda-talk.jpg)](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript)
 
 ## Additional Resources
 
