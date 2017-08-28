@@ -8,7 +8,7 @@ This repo contains notes and runnable examples of the lambda calculus as express
 
 Visit [https://glebec.github.io/lambda-talk](https://glebec.github.io/lambda-talk) for a formatted version of the code.
 
-The runnable JS file is in [`src/index.js`](src/index.js). Execute the file is by cloning this repo and running `npm start`. Or, view the REPL [here](https://repl.it/Jgu4/235).
+The runnable JS file is in [`src/index.js`](src/index.js). Execute the file is by cloning this repo and running `npm start`. Or, view the REPL [here](https://repl.it/Jgu4/236).
 
 ## Presentation
 
