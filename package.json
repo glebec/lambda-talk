@@ -1,6 +1,6 @@
 {
 	"name": "g-lebec-lambda-talk",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A demonstration of the lambda calculus in JavaScript",
 	"engines": {
 		"node": ">=8.0.0"
