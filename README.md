@@ -24,9 +24,11 @@ This repo was created as an accompaniment to a lecture talk given at Fullstack A
 
 ### Slides
 
-[Click to view the slide deck.](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript)
+[Click to view the original slide deck.](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript)
 
 [![Lambda as JS - Presentation Cover Image](assets/lambda-talk.jpg)](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript)
+
+**Update**: the first part of the presentation has been slightly modified over time; the deck used for the 2019-10 Smartly.io DevTalks can be seen [here](https://speakerdeck.com/glebec/lambda-calc-talk-smartly-dot-io-version).
 
 ## Additional Resources
 
