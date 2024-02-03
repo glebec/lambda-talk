@@ -359,7 +359,7 @@ demo('2 yell λ = λ!!',   n2(yell)(λ) === 'λ!!')
 demo('3 yell λ = λ!!!',  n3(yell)(λ) === 'λ!!!')
 demo('4 yell λ = λ!!!!', n4(yell)(λ) === 'λ!!!!')
 
-// ### Arithemtic
+// ### Arithmetic
 
 // #### Addition
 
